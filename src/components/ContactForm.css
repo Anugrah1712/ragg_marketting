@@ -1,141 +1,139 @@
 /* General styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: linear-gradient(135deg, #111, #222);
+  overflow-x: hidden;
+}
+
+.contact-form-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px 20px;
+}
+
+.contact-form-card {
+  background: linear-gradient(135deg, #111, #222);
+  backdrop-filter: blur(15px); /* Increased blur for a more frosted glass effect */
+  border-radius: 20px; /* More rounded corners */
+  padding: 50px; /* Increased padding */
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), /* Enhanced shadow */
+              0 0 20px rgba(0, 0, 0, 0.2); /* Added a glow effect */
+  text-align: center;
+  color: #eee; /* Slightly off-white color */
+  transform: perspective(800px) rotateY(0deg); /* Subtle 3D tilt */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transition */
+  position: relative;
+}
+
+
+.contact-form-card h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: linear-gradient(90deg, #00ffff, #0066ff);
+}
+
+.contact-form-card p {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: linear-gradient(90deg, #00ffff, #0066ff);
+  line-height: 1.5;
+}
+
+form label {
+  font-size: 1rem;
+  color: linear-gradient(90deg, #00ffff, #0066ff); /* Light gray for labels */
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 14px; /* Slightly larger padding */
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px; /* More rounded input fields */
+  background: rgba(255, 255, 255, 0.2); /* Slightly darker input background */
+  color: #eee; /* Lighter text */
+  font-size: 1rem;    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+  form input:focus,
+  form textarea:focus{
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3);
+      outline: none;
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1b1b1b;
-    overflow-x: hidden;
+
+form textarea {
+  height: 160px; /* Slightly taller textarea */
+  resize: none;
+}
+
+.send-btn {
+  padding: 14px 30px; /* Increased padding */
+  background-color: #4adbfb; /* More vibrant button color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Button shadow */
+  border-radius: 10px; /* Rounded button */
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.send-btn .arrow-icon {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.send-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.send-btn:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover */
+  transform: translateY(-1px);
+}
+
+/* Subtle particle animation */
+.contact-form-container::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background-size: 10px 10px;
+  pointer-events: none;
+  animation: particles 3s infinite ease-in-out;
+}
+
+@keyframes particles {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.9);
   }
-  
-  .contact-form-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 50px 20px;
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
   }
-  
-  .contact-form-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 40px;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    color: #fff;
-    transform: translateY(0);
-    transition: transform 0.3s ease;
-    position: relative;
+  100% {
+    opacity: 0.2;
+    transform: scale(0.9);
   }
-  
-  .contact-form-card h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #fff;
-  }
-  
-  .contact-form-card p {
-    margin-bottom: 30px;
-    font-size: 1rem;
-    color: #fff;
-    line-height: 1.5;
-  }
-  
-  form label {
-    font-size: 1rem;
-    color: #fff;
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    text-align: left;
-  }
-  
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.3);
-    color: #333;
-    font-size: 1rem;
-  }
-  
-  form textarea {
-    height: 150px;
-    resize: none;
-  }
-  
-  .send-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 25px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    font-size: 1rem;
-    overflow: hidden;
-  }
-  
-  .send-btn .arrow-icon {
-    margin-left: 10px;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-  }
-  
-  .send-btn:hover .arrow-icon {
-    transform: translateX(5px);
-  }
-  
-  .send-btn span {
-    display: block;
-    position: relative;
-    transition: transform 0.3s ease;
-  }
-  
-  .send-btn:hover span {
-    transform: translateX(10px);
-  }
-  
-  /* Subtle particle animation */
-  .contact-form-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-    background-size: 10px 10px;
-    pointer-events: none;
-    animation: particles 3s infinite ease-in-out;
-  }
-  
-  @keyframes particles {
-    0% {
-      opacity: 0.2;
-      transform: scale(0.9);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 0.2;
-      transform: scale(0.9);
-    }
-  }
-  
+}

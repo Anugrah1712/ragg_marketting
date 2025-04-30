@@ -1,97 +1,119 @@
 /* Full page height, dark grey background for the features section */
 .features-section {
-  min-height: 100vh; /* Full screen height */
-  background-color: #212121; /* Dark grey background similar to Firebase Studio */
-  padding: 60px 20px;
+  min-height: 100vh;
+  background-color: black; /* Darker background */
+  padding: 80px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out, box-shadow 0.3s ease;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
-/* The section becomes visible when scrolled into view */
 .features-section.visible {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
 .features-title {
   font-size: 3rem;
-  font-weight: 600;
-  color: rgba(0, 255, 255, 0.5);
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  color: #00e5ff;
+  font-weight: 700;
   text-align: center;
-  line-height: 1.3;
-  letter-spacing: 1px;
-  animation: fadeInUp 1s ease-out;
+  text-shadow: 0 2px 10px rgba(0, 229, 255, 0.4);
+  position: relative; /* Ensures inner 3D effects are above title */
+  z-index: 2;
 }
 
 .features-grid {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .feature-card {
-  background: #121212; /* Dark background for feature cards */
-  border: 1px solid #333; /* Slightly lighter border */
-  padding: 30px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, #111, #222);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 35px;
+  border-radius: 25px;
   width: 300px;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  will-change: transform;
+  will-change: transform, box-shadow;
+}
+
+.features-section::before,
+.features-section::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+.features-section::before {
+    top: 0;
+    height: 50px; 
+    background: black;
+    
+}
+.features-section::after {
+    bottom: 0;
+    height: 50px;
+    background: black;
 }
 
 .feature-card:hover {
-  transform: translateY(-12px) scale(1.05); /* Slight scaling effect */
-  box-shadow: 0 12px 48px rgba(0, 255, 255, 0.15);
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 14px 55px rgba(0, 0, 0, 0.4), 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #00bcd4; /* Highlight color for icons */
-  animation: pulseGlow 2s infinite ease-in-out;
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  color: #00c8ff;
+  animation: pulseGlow 2s infinite linear;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
 }
 
 .feature-card h3 {
   font-size: 1.4rem;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-weight: 600;
-  color: #fff;
+  color: #e8e8e8;
 }
 
 .feature-card p {
   font-size: 1rem;
-  color: #bbb;
-  line-height: 1.5;
+  color: #c0c0c0;
+  line-height: 1.6;
 }
 
-/* Animation for the glowing effect on icons */
 @keyframes pulseGlow {
   0%, 100% {
-    text-shadow: 0 0 6px rgba(0, 255, 255, 0.2);
+    text-shadow: 0 0 8px rgba(0, 200, 255, 0.3);
   }
   50% {
-    text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 16px rgba(0, 200, 255, 0.7);
   }
 }
 
-/* Fade-in animation for the section title */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+

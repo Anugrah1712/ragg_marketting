@@ -1,82 +1,87 @@
 /* Full height section with smooth scroll animation */
 .how-it-works-section {
-  min-height: 100vh; /* Full screen height */
-  background: linear-gradient(145deg, #333, #444); /* Dark gradient background */
+  min-height: 100vh;
+  background: black; /* Deeper, richer gradient */
   color: #fff;
   padding: 60px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  opacity: 0; /* Hidden initially */
+  transform: translateY(40px); /* Moved down initially */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+  position: relative;
+  overflow: hidden; /* For clipping potential overflows */
 }
 
 .how-it-works-section.visible {
-  opacity: 1;
-  transform: translateY(0px);
+  opacity: 1; /* Make visible */
+  transform: translateY(0px); /* Move to original position */
 }
 
-.section-title {
+.section-title { /* Title Styling */
   font-size: 3rem;
+  margin-bottom: 40px;
+  color: #00e5ff;
   font-weight: 700;
-  margin-bottom: 50px;
   text-align: center;
-  background: linear-gradient(90deg, #00ffff, #0066ff);
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: fadeInUp 1.5s ease-out;
+  text-shadow: 0 2px 10px rgba(0, 229, 255, 0.4);
+  position: relative; /* Ensures inner 3D effects are above title */
+  z-index: 2; /* Text shadow for depth */
 }
 
 .steps-container {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  flex-wrap: wrap;
-  perspective: 1000px;
+  display: flex; /* Flexbox to manage card layouts */
+  gap: 32px; /* Spacing between the cards */
+  justify-content: center; /* Align items in the center */
+  flex-wrap: wrap; /* Wrap cards as needed */
+  perspective: 1000px; /* 3D perspective for rotating effects */
 }
 
-.step-card {
-  background: rgba(255, 255, 255, 0.06); /* Slightly darker background */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 28px;
-  border-radius: 20px;
-  width: 280px;
-  backdrop-filter: blur(16px);
-  transition: transform 0.5s ease, box-shadow 0.4s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
+.step-card { /* Card Styling */
+  background: rgba(255, 255, 255, 0.08); /* More pronounced background */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible border */
+  padding: 28px; /* Standard padding */
+  border-radius: 20px; /* Rounded corners */
+  width: 280px; /* Fixed card width */
+  backdrop-filter: blur(16px); /* Background blur */
+  transition: transform 0.5s ease, box-shadow 0.4s ease; /* Card animation */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* More intense shadow */
+  cursor: pointer; /* Hand cursor */
 }
 
-.step-card.visible {
-  transform: translateY(-20px);
+.step-card.visible { /* Visible state for card */
+  transform: translateY(-20px); /* Lift up */
 }
 
-.step-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 16px 48px rgba(0, 255, 255, 0.2);
+.step-card:hover { /* Hover effect for card */
+  transform: translateY(-12px); /* Lift up more on hover */
+  box-shadow: 0 20px 50px rgba(0, 255, 255, 0.3); /* Brighter hover shadow */
 }
 
-.step-icon {
-  font-size: 3.5rem;
-  margin-bottom: 16px;
-  animation: pulseGlow 3s infinite ease-in-out;
-  color: #00bcd4; /* Accent color for icons */
+.step-icon { /* Icon Styling */
+  font-size: 3.5rem; /* Large icon */
+  margin-bottom: 16px; /* Space below icon */
+  animation: pulseGlow 3s infinite ease-in-out; /* Glow animation */
+  color: #00c6ff; /* Brighter accent color */
+  text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff; /* Add a more intense glow */
 }
 
-.step-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  font-weight: 600;
-  color: #dffaff;
+.step-card h3 { /* Heading in card */
+  font-size: 1.3rem; /* Good size */
+  margin-bottom: 12px; /* Space below heading */
+  font-weight: 600; /* Semi-bold */
+  color: #e0ffff; /* Soft white color */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.step-card p {
-  font-size: 1rem;
-  color: #b4c5d1;
-  line-height: 1.5;
-  text-align: center;
+.step-card p { /* Paragraph in card */
+  font-size: 1rem; /* Good size */
+  color: #b4c5d1; /* Soft text color */
+  line-height: 1.5; /* Comfortable line height */
+  text-align: center; /* Center the text */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Glow animation for icons */
