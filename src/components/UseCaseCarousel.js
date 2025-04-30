@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './UseCaseCarousel.css';
+import React, { useEffect, useRef, useState } from 'react';
+import './UseCaseCarousel.css'; // Keep your existing CSS file, but update classes below
 
 const useCases = [
   {
@@ -29,46 +29,34 @@ const useCases = [
 ];
 
 const UseCaseCarousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useRef();
+  const [visible, setVisible] = useState(false);
 
-  const handleScroll = (direction) => {
-    if (direction === 'left') {
-      setActiveIndex((prevIndex) => (prevIndex === 0 ? useCases.length - 1 : prevIndex - 1));
-    } else {
-      setActiveIndex((prevIndex) => (prevIndex === useCases.length - 1 ? 0 : prevIndex + 1));
-    }
-  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="use-case-carousel">
-      <h2 className="carousel-title">💡 Explore What You Can Build</h2>
-      <div className="carousel-container">
-        <button className="scroll-btn left" onClick={() => handleScroll('left')}>
-          &#10094;
-        </button>
-
-        <div className="carousel-content">
-          {useCases.map((useCase, index) => (
-            <div
-              key={index}
-              className={`carousel-card ${index === activeIndex ? 'active' : ''}`}
-            >
-              <div className="card-inner">
-                <div className="card-front">
-                  <div className="card-icon">{useCase.icon}</div>
-                  <h3>{useCase.title}</h3>
-                </div>
-                <div className="card-back">
-                  <p>{useCase.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <button className="scroll-btn right" onClick={() => handleScroll('right')}>
-          &#10095;
-        </button>
+    <section
+      ref={sectionRef}
+      className={`features-section ${visible ? 'visible' : ''}`}
+    >
+      <h2 className="features-title">Explore What You Can Build</h2>
+      <div className="features-grid">
+        {useCases.map((useCase, index) => (
+          <div className="feature-card" key={index}>
+            <div className="feature-icon">{useCase.icon}</div>
+            <h3>{useCase.title}</h3>
+            <p>{useCase.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
