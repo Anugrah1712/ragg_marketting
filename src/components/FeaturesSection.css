@@ -1,0 +1,97 @@
+/* Full page height, dark grey background for the features section */
+.features-section {
+  min-height: 100vh; /* Full screen height */
+  background-color: #212121; /* Dark grey background similar to Firebase Studio */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* The section becomes visible when scrolled into view */
+.features-section.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.features-title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: rgba(0, 255, 255, 0.5);
+  margin-bottom: 50px;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.features-grid {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #121212; /* Dark background for feature cards */
+  border: 1px solid #333; /* Slightly lighter border */
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  backdrop-filter: blur(16px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  will-change: transform;
+}
+
+.feature-card:hover {
+  transform: translateY(-12px) scale(1.05); /* Slight scaling effect */
+  box-shadow: 0 12px 48px rgba(0, 255, 255, 0.15);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00bcd4; /* Highlight color for icons */
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #bbb;
+  line-height: 1.5;
+}
+
+/* Animation for the glowing effect on icons */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* Fade-in animation for the section title */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

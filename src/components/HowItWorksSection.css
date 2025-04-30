@@ -1,0 +1,102 @@
+/* Full height section with smooth scroll animation */
+.how-it-works-section {
+  min-height: 100vh; /* Full screen height */
+  background: linear-gradient(145deg, #333, #444); /* Dark gradient background */
+  color: #fff;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.how-it-works-section.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  background: linear-gradient(90deg, #00ffff, #0066ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.steps-container {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.06); /* Slightly darker background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 28px;
+  border-radius: 20px;
+  width: 280px;
+  backdrop-filter: blur(16px);
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.step-card.visible {
+  transform: translateY(-20px);
+}
+
+.step-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 48px rgba(0, 255, 255, 0.2);
+}
+
+.step-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  animation: pulseGlow 3s infinite ease-in-out;
+  color: #00bcd4; /* Accent color for icons */
+}
+
+.step-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #dffaff;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: #b4c5d1;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Glow animation for icons */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* Fade-in-up effect for the title */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

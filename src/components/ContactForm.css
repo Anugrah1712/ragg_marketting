@@ -1,0 +1,141 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1b1b1b;
+    overflow-x: hidden;
+  }
+  
+  .contact-form-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20px;
+  }
+  
+  .contact-form-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  
+  .contact-form-card h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .contact-form-card p {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+  }
+  
+  form label {
+    font-size: 1rem;
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    height: 150px;
+    resize: none;
+  }
+  
+  .send-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    font-size: 1rem;
+    overflow: hidden;
+  }
+  
+  .send-btn .arrow-icon {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .send-btn:hover .arrow-icon {
+    transform: translateX(5px);
+  }
+  
+  .send-btn span {
+    display: block;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .send-btn:hover span {
+    transform: translateX(10px);
+  }
+  
+  /* Subtle particle animation */
+  .contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    background-size: 10px 10px;
+    pointer-events: none;
+    animation: particles 3s infinite ease-in-out;
+  }
+  
+  @keyframes particles {
+    0% {
+      opacity: 0.2;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0.2;
+      transform: scale(0.9);
+    }
+  }
+  
