@@ -26,27 +26,33 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [expandedItems, setExpandedItems] = useState({});
 
-  const toggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleItem = (index) => {
+    setExpandedItems((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
   };
 
   return (
     <section className="faq-section">
-      <h2 className="faq-title"> Frequently Asked Questions</h2>
+      <h2 className="faq-title">Frequently Asked Questions</h2>
       <div className="faq-list">
-        {faqs.map((item, index) => (
-          <div className={`faq-item ${openIndex === index ? 'open' : ''}`} key={index}>
-            <button className="faq-question" onClick={() => toggle(index)}>
-              <span>{item.question}</span>
-              <FaChevronDown className="faq-icon" />
-            </button>
-            <div className="faq-answer">
-              <p>{item.answer}</p>
+        {faqs.map((item, index) => {
+          const isOpen = expandedItems[index];
+          return (
+            <div className={`faq-item ${isOpen ? 'open' : ''}`} key={index}>
+              <button className="faq-question" onClick={() => toggleItem(index)}>
+                <span>{item.question}</span>
+                <FaChevronDown className="faq-icon" />
+              </button>
+              <div className="faq-answer">
+                <p>{item.answer}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

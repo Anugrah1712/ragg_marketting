@@ -28,30 +28,37 @@
   flex-wrap: wrap;
   justify-content: space-around; /* Distribute space */
   gap: 30px; /* Adjust gap */
-  padding: 20px;
+  padding: 20px;  
 }
 
 /* Step card styles */
 .card {
-  background: #1e1e1e;
-  padding: 30px; /* Increased padding */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
   border-radius: 20px; /* More rounded */
   width: 320px; /* Adjusted width */
   max-width: 320px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2); /* Subtle, layered shadows */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* smooth transition */
+  color: #fff;
+  backdrop-filter: blur(20px);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.4s ease;
   cursor: pointer;
   display: flex;
-  flex-direction: column;  
-  transform-style: preserve-3d;
-  
-  will-change: transform, box-shadow;
+  flex-direction: column;
 }
 
-
-.how-it-works-container:hover .card {  
-  transform: translateY(-10px) rotateX(10deg) rotateY(5deg) scale(1.05);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3), 0px 0px 4px rgba(0, 0, 0, 0.2);
+.card:hover {
+  transform: scale(1.05) translateZ(20px);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  border-image: linear-gradient(45deg, #00f0ff, #9f00ff) 1;
+  z-index: 2;
+}
+.card:hover{
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  border-image: linear-gradient(45deg, #00f0ff, #9f00ff) 1;
 }
 
 .how-it-works-step-icon {

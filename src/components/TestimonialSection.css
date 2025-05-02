@@ -56,13 +56,20 @@
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   transform: rotateY(10deg) scale(0.95);
+  transform-style: preserve-3d;
   opacity: 0;
   animation: floatIn 0.8s forwards;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
-.testimonial-card:hover{
-  transform: translateY(-5px) rotateY(0deg) scale(1.02) ;
+
+.testimonial-card:hover {
+  transform: scale(1.05) translateZ(20px);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  border-image: linear-gradient(45deg, #00f0ff, #9f00ff) 1;
+  z-index: 2;
 }
+
 
 .testimonial-card .stars {
   color: gold;
@@ -93,7 +100,7 @@
     transform: translateY(0) rotateY(0deg) scale(1);
     filter: blur(0);
   }
-  from {
+   from {
     opacity: 0;
     transform: translateY(60px) rotateY(25deg) scale(0.9);
     filter: blur(8px);

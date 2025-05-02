@@ -1,10 +1,15 @@
 .hero-container {
   position: relative;
   height: 100vh;
-  background: black; /* Deeper dark background */
+  background: radial-gradient(circle at top left, #00080dd4,transparent),
+    black; /* Deeper dark background */
   background-size: 400% 400%; /* Larger for animation */
   display: flex;
   justify-content: center;
+  perspective: 1000px;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  
+  
   align-items: center;
   overflow: hidden;
   text-align: center;
@@ -16,11 +21,14 @@
 }
 
 .hero-content {
-  z-index: 2;
+  z-index: 5;
   max-width: 900px; /* Slightly wider */
   padding: 0 40px; /* More padding */
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Stronger text shadow */
+  transform: translateZ(50px); /* Move content forward in 3D space */
+  
 }
+
 
 .hero-content h1 {
   font-size: 5rem; /* Much larger */
@@ -29,7 +37,7 @@
   color: #ffffff;
   text-shadow: 0 4px 12px rgba(0, 229, 255, 0.6), 0 0 20px #00eaff; /* Strong glow */
   position: relative;
-  z-index: 2;
+  z-index: 5;
   animation: headingSlideIn 1s ease-out forwards, headingGlow 3s ease-in-out infinite alternate; /* Added headingGlow */
   transition: all 0.3s ease; /* Transition for all properties */
 }
@@ -94,6 +102,7 @@
   background: radial-gradient(circle, #00eaff44, transparent); /* More intense color */
   filter: blur(180px); /* More blur */
   z-index: 1;
+  
   animation: blob-move 15s ease-in-out infinite; /* Even slower */
 }
 
