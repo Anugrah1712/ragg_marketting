@@ -1,24 +1,23 @@
 /* Full page height, dark grey background for the features section */
 .features-section {
-  min-height: 100vh;
-  background-color: rgb(9, 8, 8); /* Darker background */
-  padding: 80px 20px;
+  background-color: black; /* Match Hero section background */
+  padding: 80px 20px; /* Increased padding for spacious feel */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease-out, transform 1s ease-out, box-shadow 0.3s ease;
-  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+  margin-bottom: 60px; /* Increased margin for separation */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
   position: relative;
-  z-index: 1;
-  overflow: hidden;
 }
 
-.features-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.features-container {
+  width: 100%;
+  max-width: 1200px; /* Limit width for better readability */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribute space */
+  gap: 30px; /* Adjust gap */
+  padding: 20px;
 }
 
 .features-title {
@@ -32,88 +31,69 @@
   z-index: 2;
 }
 
-.features-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
+/* Card Styling */
 .feature-card {
-  background: black;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 35px;
-  border-radius: 25px;
-  width: 300px;
-  backdrop-filter: blur(20px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #1c2331, #151a25);
+  padding: 30px; /* Increased padding */
+  border-radius: 20px; /* More rounded */
+  width: 320px; /* Adjusted width */
+  max-width: 320px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2); /* Subtle, layered shadows */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* smooth transition */
   cursor: pointer;
+  display: flex;
+  flex-direction: column;  
+  transform-style: preserve-3d;
+  
   will-change: transform, box-shadow;
 }
 
+.feature-card-container {
+  flex: 1 1 320px; /* Grow, shrink, base size */
+  max-width: 320px;
+  perspective: 1000px; /* Add perspective */
+  margin: 15px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card-container:hover .feature-card {  
+  transform: translateY(-10px) rotateX(10deg) rotateY(5deg) scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3), 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* add gradient to the background of the section */
 .features-section::before,
 .features-section::after {
     content: '';
     position: absolute;
     left: 0;
-    width: 100%;
-}
-.features-section::before {
-    top: 0;
-    height: 50px; 
-    background: black;
-    
-}
-.features-section::after {
-    bottom: 0;
-    height: 50px;
-    background: black;
+    width: 100%;    
+    opacity: 0.3;
 }
 
-.feature-card:hover {
-  transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 14px 55px rgba(0, 0, 0, 0.4), 0 6px 8px rgba(0, 0, 0, 0.15);
+
+.feature-card:hover .feature-icon,
+.feature-card:hover h3{
+  color: #007bff;
+  text-shadow: 0 0 15px #007bff;
 }
 
 .feature-icon {
   font-size: 3.5rem;
-  margin-bottom: 25px;
-  color: #00c8ff;
-  animation: pulseGlow 2s infinite linear;
-  text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+  margin-bottom: 20px; /* Adjust margin */
+  color: #dcdcdc; /* Light gray */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Add transition */
+  text-shadow: none;
 }
 
 .feature-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #e8e8e8;
+  font-size: 1.3rem; /* Slightly larger */
+  margin-bottom: 10px;
+  color: #ffffff; /* White */
+  font-weight: 700; /* Bolder */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Add transition */
 }
 
 .feature-card p {
-  font-size: 1rem;
-  color: #c0c0c0;
-  line-height: 1.6;
+  color: #dcdcdc;
 }
-
-@keyframes pulseGlow {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(0, 200, 255, 0.3);
-  }
-  50% {
-    text-shadow: 0 0 16px rgba(0, 200, 255, 0.7);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-

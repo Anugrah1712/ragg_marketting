@@ -52,7 +52,7 @@ const TestimonialSection = () => {
       ref={sectionRef}
       className={`testimonial-section ${visible ? 'visible' : ''}`}
     >
-      <h2 className="testimonial-title">⭐ Trusted by Teams & Builders</h2>
+      <h2 className="testimonial-title">Trusted by Teams & Builders</h2>
       <div className="testimonial-grid">
         {testimonials.map((t, idx) => (
           <div className="testimonial-card" key={idx} style={{ animationDelay: `${idx * 0.2}s` }}>
