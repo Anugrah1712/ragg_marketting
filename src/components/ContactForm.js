@@ -7,9 +7,9 @@ const ContactForm = () => {
     const handleScroll = () => {
       const form = document.querySelector('.contact-form-container');
       const scrollY = window.scrollY;
-      if (form) {
-        form.style.transform = `translateY(${scrollY * 0.05}px)`; // subtle effect
-      }
+      // if (form) {
+      //   form.style.transform = `translateY(${scrollY * 0.05}px)`; // subtle effect
+      // }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -17,8 +17,8 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <section className="contact-section-wrapper">
-      <h2 className="contact-form-heading">Get in Touch</h2> {/* Moved here */}
+    <section id="contact" className="contact-section-wrapper">
+      <h2 className="contact-form-heading">Get in Touch</h2>
       <div className="contact-form-container">
         <div className="contact-form-card">
           <p>
@@ -28,13 +28,13 @@ const ContactForm = () => {
           <form>
             <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required />
-  
+
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Where can we reach you?" required />
-  
+
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" placeholder="Tell us how we can help" required></textarea>
-  
+
             <button type="submit" className="send-btn">
               <span>Send Message</span>
               <i className="arrow-icon">→</i>
@@ -44,6 +44,6 @@ const ContactForm = () => {
       </div>
     </section>
   );
-}  
+}
 
 export default ContactForm;

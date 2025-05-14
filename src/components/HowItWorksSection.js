@@ -42,6 +42,7 @@ const HowItWorksSection = () => {
 
   return (
     <section
+      id="how-it-works"
       ref={sectionRef}
       className={`how-it-works-section ${visible ? 'visible' : ''}`}
     >

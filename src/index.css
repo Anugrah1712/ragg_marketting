@@ -9,3 +9,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+html {
+  scroll-padding-top: 100px; /* Adjust to match or slightly exceed your header height */
+}

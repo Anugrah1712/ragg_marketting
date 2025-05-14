@@ -49,6 +49,7 @@ const TestimonialSection = () => {
 
   return (
     <section
+      id="testimonials"
       ref={sectionRef}
       className={`testimonial-section ${visible ? 'visible' : ''}`}
     >

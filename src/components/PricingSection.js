@@ -43,7 +43,7 @@ const PricingSection = () => {
   const [selected, setSelected] = useState('pro');
 
   return (
-    <section className="pricing-section">
+    <section id="pricing" className="pricing-section">
       <h2 className="pricing-title"> Simple, Transparent Pricing</h2>
       <div className="pricing-grid horizontal">
         {tiers.map((tier) => (

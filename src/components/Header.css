@@ -1,31 +1,74 @@
-/* src/components/Header.css */
+/* Header styles */
 .header {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: black;
+  color: #fff;
+  padding: 0rem 2rem;  /* Reduced padding to make the header thinner */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Layout inside header */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px;  /* Reduced logo size to fit better in the thinner header */
+}
+
+/* Nav styling */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  width: 140px; /* Fixed size */
+  height: 42px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #00e5ff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link:hover {
+  transform: scale(1.05) translateZ(10px);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  border-image: linear-gradient(45deg, #00f0ff, #9f00ff) 1;
+  color: #ffffff;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
-  
-  .header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2rem;
+
+  .nav-link {
+    width: 120px;
+    height: 38px;
+    font-size: 0.85rem;
   }
-  
-  .header nav ul li a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .header nav ul li a:hover {
-    color: #d4d4d4;
-  }
-  
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+}

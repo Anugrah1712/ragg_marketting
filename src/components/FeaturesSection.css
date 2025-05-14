@@ -4,13 +4,16 @@
   padding: 80px 20px; /* Increased padding for spacious feel */
   display: flex;
   flex-direction: column; /* Align items vertically */
-  align-items: center; /* Center items horizontally */
-  margin-bottom: 60px; /* Increased margin for separation */
+  align-items: center;
+  margin-top: 100px;
+  height: 85vh;
+  margin-bottom: 100px; /* Increased margin for separation */
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
   position: relative;
 }
 
 .features-container {
+  margin-top: 200px;
   width: 100%;
   max-width: 1200px; /* Limit width for better readability */
   display: flex;
@@ -18,11 +21,12 @@
   justify-content: space-around; /* Distribute space */
   gap: 30px; /* Adjust gap */
   padding: 20px;
+  align-items: center;
 }
 
 .features-title {
   font-size: 3rem;
-  margin-bottom: 40px;
+  margin-bottom: 120px;
   color: #00e5ff;
   font-weight: 700; 
   text-align: center;

@@ -37,6 +37,7 @@ const FeaturesSection = () => {
 
   return (
     <section
+      id="features"
       ref={sectionRef}
       className={`features-section ${visible ? 'visible' : ''}`}
     >

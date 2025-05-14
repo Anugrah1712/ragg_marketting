@@ -9,12 +9,13 @@
   position: relative;
   min-height: auto;
   padding-bottom: 0px;
+  height: 80vh;
 }
 
 .faq-title {
   font-size: 3rem;
-  margin-top: 0px;  
-  margin-bottom: 40px;
+  margin-top: -100px;  
+  margin-bottom: 120px;
   color: #00e5ff;
   font-weight: 700;
   text-align: center;

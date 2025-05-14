@@ -1,6 +1,6 @@
 .hero-container {
   position: relative;
-  height: 100vh;
+  height: 85vh;
   background: radial-gradient(circle at top left, #00080dd4,transparent),
     black; /* Deeper dark background */
   background-size: 400% 400%; /* Larger for animation */

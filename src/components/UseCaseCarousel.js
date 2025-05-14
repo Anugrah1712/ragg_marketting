@@ -45,6 +45,7 @@ const UseCaseCarousel = () => {
 
   return (
     <section
+      id="use-case"
       ref={sectionRef}
       className={`features-section ${visible ? 'visible' : ''}`}
     >

@@ -1,26 +1,43 @@
 // src/App.jsx
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import HeroSection from './hero/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
-import HowItWorksSection from './components/HowItWorksSection'
+import HowItWorksSection from './components/HowItWorksSection';
 import UseCaseCarousel from './components/UseCaseCarousel';
-import TestimonialCard from './components/TestimonialSection';
+import TestimonialSection from './components/TestimonialSection';
 import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
 import ContactForm from './components/ContactForm';
+import Header from './components/Header';
+import TrainingInstitutePage from './pages/TrainingInstitutePage';
+
+
 
 function App() {
   return (
-    <div className="app-container">
-      <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <UseCaseCarousel/>
-      <TestimonialCard />
-      <PricingSection />
-      <FAQSection />
-      <ContactForm />
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroSection />
+              <FeaturesSection />
+              <HowItWorksSection />
+              <UseCaseCarousel />
+              <TestimonialSection />
+              <PricingSection />
+              <FAQSection />
+              <ContactForm />
+            </>
+          }
+        />
+        <Route path="/training-institute" element={<TrainingInstitutePage />} />
+      </Routes>
+    </Router>
   );
 }
 
