@@ -11,9 +11,7 @@ import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
 import ContactForm from './components/ContactForm';
 import Header from './components/Header';
-import TrainingInstitutePage from './pages/TrainingInstitutePage';
-
-
+import { Chatbot } from 'rag-chatbot-ui-marketing';
 
 function App() {
   return (
@@ -35,8 +33,8 @@ function App() {
             </>
           }
         />
-        <Route path="/training-institute" element={<TrainingInstitutePage />} />
       </Routes>
+       <Chatbot />
     </Router>
   );
 }

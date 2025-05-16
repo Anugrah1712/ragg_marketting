@@ -1,8 +1,8 @@
 import React from 'react';
 import './HeroSection.css';
-import ChatbotMockup from '../components/ChatbotMockup';
+// import ChatbotMockup from '../components/ChatbotMockup';
 import { useNavigate } from 'react-router-dom';
-import { Chatbot } from 'rag-chatbot-ui-marketing';
+
 
 function HeroSection() {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ function HeroSection() {
 
       </div>
       {/* <ChatbotMockup /> */}
-      <Chatbot />
+      {/* <Chatbot /> */}
     </div>
   );
 }
