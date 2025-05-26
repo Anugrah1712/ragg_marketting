@@ -11,7 +11,7 @@ import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
 import ContactForm from './components/ContactForm';
 import Header from './components/Header';
-import { Chatbot } from 'rag-chatbot-ui-marketing';
+import { Chatbot } from 'rag-chatbot-ui-gptbots';
 
 function App() {
   return (
