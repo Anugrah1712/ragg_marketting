@@ -1,21 +1,40 @@
+// FeaturesSection.js
+
 import React, { useEffect, useRef, useState } from 'react';
 import './FeaturesSection.css';
 
 const features = [
   {
-    title: 'Document Upload',
-    icon: '📄',
-    description: 'Instantly upload PDFs, Word docs, or text files. Your chatbot reads and understands the content in seconds — ready to answer questions with context-aware precision.',
+    title: 'Retrieval-Augmented Generation (RAG) Architecture',
+    description: 'GPTBOT intelligently retrieves relevant information from uploaded documents and web data, grounding its responses in actual content—no hallucinations, just facts.',
   },
   {
-    title: 'Website Scraping',
-    icon: '🌐',
-    description: 'Input a URL and let the bot extract structured content, FAQs, and insights from any website using advanced scraping and analysis tools.',
+    title: 'Multimodal Input Support',
+    description: 'Upload PDFs, DOCX files, plain text, or even URLs. GPTBOT can instantly analyze and extract meaning from diverse formats.',
   },
   {
-    title: 'Custom Prompting',
-    icon: '💬',
-    description: 'Define the chatbot’s behavior with custom instructions. Tailor tone, context rules, and response logic to match your exact use case.',
+    title: 'Vector Search with Seamless Integration',
+    description: 'Powered by top vector databases including FAISS, Pinecone, Weaviate, and Qdrant for ultra-fast semantic search across your content.',
+  },
+  {
+    title: 'Multiple LLM Support',
+    description: 'Switch between powerful models like GPT-4, Llama 3, Gemini 1.5 Flash, and more—dynamically, based on your performance or cost needs.',
+  },
+  {
+    title: 'Developer Console for Full Control',
+    description: 'Easily manage prompts, models, indexing, and system behavior via a secure, admin-only interface.',
+  },
+  {
+    title: 'Voice & Time-Aware Interaction',
+    description: 'Talk to GPTBOT. It listens. It speaks. With built-in speech-to-text and time-aware greetings, your interactions feel natural and human.',
+  },
+  {
+    title: 'Privacy-First, Self-Hosted Deployment',
+    description: 'Deploy GPTBOT entirely on-premise with no data ever sent externally. Perfect for regulated industries like law, finance, and healthcare.',
+  },
+  {
+    title: 'Real-Time Document Summarization & Q&A',
+    description: 'Summarize, explore, and query your documents instantly—get precise, context-rich answers with full source traceability.',
   },
 ];
 
@@ -23,13 +42,12 @@ const FeaturesSection = () => {
   const sectionRef = useRef();
   const [visible, setVisible] = useState(false);
 
-  // Intersection Observer to detect when the section is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.3 } // Trigger when 30% of the section is visible
+      { threshold: 0.3 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -45,7 +63,6 @@ const FeaturesSection = () => {
       <div className="features-grid">
         {features.map((feature, index) => (
           <div className="feature-card" key={index}>
-            <div className="feature-icon">{feature.icon}</div>
             <h3>{feature.title}</h3>
             <p>{feature.description}</p>
           </div>

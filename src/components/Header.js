@@ -1,3 +1,5 @@
+// Header.js
+
 import React from 'react';
 import './Header.css';
 import logo from '../assets/logo.png';
@@ -6,15 +8,22 @@ const Header = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+      const headerOffset = document.querySelector('.header').offsetHeight;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+};
 
   return (
     <header className="header">
       <div className="header-content">
-        <div className="logo">
-        <img src={logo} alt="DocuChat logo" />
+        <div className="logo" onClick={() => scrollToSection('hero')} style={{ cursor: 'pointer' }}>
+          <img src={logo} alt="GTS logo" />
         </div>
         <nav className="nav">
           <ul className="nav-links">

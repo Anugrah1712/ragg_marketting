@@ -4,33 +4,47 @@ import './TestimonialSection.css';
 const testimonials = [
   {
     stars: 5,
-    quote: 'Seamless experience. I uploaded a massive legal document, and the chatbot answered better than my paralegal.',
-    name: 'Ananya S.',
-    role: 'Legal Associate',
+    quote:
+      'GPTBOT has become our go-to assistant for internal knowledge retrieval.',
+    detail:
+      'Employees now get instant, policy-based answers to everyday queries, reducing dependency on manual HR support and improving efficiency.',
+    name: 'HR Operations Manager',
+    role: 'Global IT Services Company',
   },
   {
     stars: 5,
-    quote: 'The website scraper saved hours of manual research. It even pulled out FAQs with zero effort.',
-    name: 'Karthik M.',
-    role: 'Product Manager',
+    quote:
+      'We’ve integrated GPTBOT into our client onboarding process—game changer.',
+    detail:
+      'By automating responses from strategy decks and past proposals, GPTBOT accelerates early client interactions and keeps the team focused on high-value tasks.',
+    name: 'Strategy Consultant',
+    role: 'Boutique Advisory Firm',
   },
   {
     stars: 5,
-    quote: 'I used it for a study guide — now I can quiz myself with my own notes. Game-changer for finals.',
-    name: 'Riya T.',
-    role: 'Computer Science Student',
+    quote:
+      'Reliable, secure, and completely under our control—exactly what we needed.',
+    detail:
+      'The self-hosted deployment model allowed us to meet strict compliance and data privacy requirements without compromising performance.',
+    name: 'CIO',
+    role: 'Financial Services Enterprise',
   },
   {
     stars: 5,
-    quote: 'We trained a support bot in under 10 minutes. Now it answers 80% of queries without human handoff.',
-    name: 'Vikram R.',
-    role: 'Head of Customer Success',
+    quote: 'GPTBOT makes document-heavy workflows manageable.',
+    detail:
+      'Extracting insights from long research reports used to be time-consuming. Now, it’s as simple as asking a question and getting context-rich responses instantly.',
+    name: 'Senior Analyst',
+    role: 'Research and Advisory Group',
   },
   {
     stars: 5,
-    quote: 'Loved the custom prompting. I could literally tell the bot how to think — and it listened.',
-    name: 'Meera D.',
-    role: 'AI Engineer',
+    quote:
+      'GPTBOT helped reduce over 60 hours of manual document review each month.',
+    detail:
+      'By enabling natural language queries on complex contracts and legal agreements, GPTBOT streamlined internal processes and improved turnaround times significantly.',
+    name: 'Legal Consultant',
+    role: 'Mid-Sized Law Firm',
   },
 ];
 
@@ -57,8 +71,9 @@ const TestimonialSection = () => {
       <div className="testimonial-grid">
         {testimonials.map((t, idx) => (
           <div className="testimonial-card" key={idx} style={{ animationDelay: `${idx * 0.2}s` }}>
-            <div className="stars">★★★★★</div>
+            <div className="stars">{'★'.repeat(t.stars)}</div>
             <p className="quote">“{t.quote}”</p>
+            <p className="detail">{t.detail}</p>
             <div className="name-role">— {t.name}, <span>{t.role}</span></div>
           </div>
         ))}

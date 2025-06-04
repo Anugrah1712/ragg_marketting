@@ -3,24 +3,25 @@ import './HowItWorksSection.css';
 
 const steps = [
   {
-    title: 'Ingest Document',
-    icon: '📄', 
-    description: 'Upload your document in any format (PDF, DOCX, TXT) and get ready to analyze.',
+    title: 'Step 1: Ingest Your Content',
+    description: 'Upload documents like PDFs, DOCX files, or share URLs. GPTBOT parses and segments the content into smaller, meaningful chunks while preserving context.',
   },
   {
-    title: 'Analyze with Gemini Flash',
-    icon: '⚡', 
-    description: 'Our powerful Gemini AI analyzes the content instantly for insights.',
+    title: 'Step 2: Smart Embedding & Indexing',
+    description: 'Each content chunk is embedded using advanced language models and stored in a vector database (like FAISS or Pinecone) for lightning-fast retrieval.',
   },
   {
-    title: 'Embed to Vector DB',
-    icon: '📡', 
-    description: 'The extracted data is embedded to a vector database for fast retrieval.',
+    title: 'Step 3: Ask Natural Questions',
+    description: 'Users interact via chat—text or voice. GPTBOT converts the query into a vector and performs a semantic search to find the most relevant content.',
   },
   {
-    title: 'Chat in Real-time',
-    icon: '💬', 
-    description: 'You can now interact with the data in real-time through a chatbot interface.',
+    title: 'Step 4: Contextual Response Generation',
+    description: 'The retrieved content is passed to a powerful large language model (LLM), which generates precise, grounded responses based strictly on your data—no guessing, no made-up answers.',
+  },
+  {
+    title: 'Step 5: Customize Everything',
+    description:
+      'Through the Developer Console, admins can tweak prompts, switch models, re-index data, or define the assistant’s tone and behavior—on the fly.',
   },
 ];
 

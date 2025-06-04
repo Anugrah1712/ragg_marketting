@@ -11,6 +11,7 @@ import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
 import ContactForm from './components/ContactForm';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { Chatbot } from 'rag-chatbot-ui-gptbots';
 
 function App() {
@@ -30,11 +31,13 @@ function App() {
               <PricingSection />
               <FAQSection />
               <ContactForm />
+            
             </>
           }
         />
       </Routes>
        <Chatbot />
+       <Footer  />
     </Router>
   );
 }

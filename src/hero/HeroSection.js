@@ -1,32 +1,39 @@
 import React from 'react';
 import './HeroSection.css';
-// import ChatbotMockup from '../components/ChatbotMockup';
-import { useNavigate } from 'react-router-dom';
-
 
 function HeroSection() {
-  const navigate = useNavigate();
-
   const handleDemoClick = () => {
-    navigate('/training-institute');
+    // Your demo click logic here
   };
+
   return (
+    <div id="hero" className="hero-container"> 
     <div className="hero-container">
       <div className="blur-bg"></div>
       <div className="hero-content">
         <h1 className="fade-up">Next-Gen AI Chatbot</h1>
-        <p className="fade-up delay-1">Harness the power of Retrieval-Augmented Generation (RAG) with GPT & Gemini to create intelligent assistants grounded in your own documents and websites.</p>
-        <button className="glow-button fade-up delay-2" onClick={handleDemoClick}>Try the Demo →</button>
 
+        <div className="gts-title fade-up">
+          <span>G</span><span>T</span><span>S</span>
+        </div>
+
+        {/* New small heading */}
+        <h3 className="gts-subheading fade-up">
+          Welcome to GTS – Pioneers in AI Innovation
+        </h3>
+
+        {/* New paragraph */}
+        <p className="gts-description fade-up delay-1">
+          At GTS, we develop cutting-edge AI solutions that transform the way businesses interact with information. Our flagship product, GPTBOT, is a powerful contextual assistant built using advanced Retrieval-Augmented Generation (RAG) architecture. Whether you're in legal, education, enterprise, or customer service, GTS empowers you with intelligent, secure, and customizable tools designed to deliver accurate, real-time insights from your data—on your terms.
+        </p>
+
+        <button className="glow-button fade-up delay-3" onClick={handleDemoClick}>
+          Try the Demo →
+        </button>
       </div>
-      {/* <ChatbotMockup /> */}
-      {/* <Chatbot /> */}
+    </div>
     </div>
   );
 }
 
 export default HeroSection;
-
-
-
-// npm install rag-chatbot-ui@latest

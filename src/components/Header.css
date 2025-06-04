@@ -2,7 +2,7 @@
 .header {
   background-color: black;
   color: #fff;
-  padding: 0rem 2rem;  /* Reduced padding to make the header thinner */
+  padding: 0rem 1.5rem; /* Slightly reduced horizontal padding */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -17,31 +17,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrap on small screens */
 }
 
 .logo img {
-  height: 100px;  /* Reduced logo size to fit better in the thinner header */
+  height: 60px; /* Slightly smaller logo */
 }
 
 /* Nav styling */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.6rem; /* Reduced spacing between buttons */
   padding: 0;
   margin: 0;
 }
 
 .nav-link {
-  width: 140px; /* Fixed size */
-  height: 42px;
+  width: 120px; /* Smaller buttons */
+  height: 38px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #00e5ff;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
@@ -61,14 +63,27 @@
 
 /* Mobile responsive */
 @media (max-width: 768px) {
+  .header-content {
+    flex-direction: row; /* ✅ Keep items in a row */
+    align-items: center;  /* ✅ Align items in center */
+    flex-wrap: wrap;      /* ✅ Allow wrapping if needed */
+    gap: 0.5rem;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
   .nav-links {
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    justify-content: center; /* ✅ Center nav buttons horizontally */
+    flex-wrap: wrap;         /* ✅ Wrap to next line if needed */
+    width: 100%;
   }
 
   .nav-link {
-    width: 120px;
-    height: 38px;
-    font-size: 0.85rem;
+    width: 100px;
+    height: 34px;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
   }
 }

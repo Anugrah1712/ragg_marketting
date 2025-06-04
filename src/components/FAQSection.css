@@ -1,20 +1,28 @@
 .faq-section {
   background-color: black; /* Match Hero section background */
-  padding: 0px 20px;  /* Increased padding for spacious feel */
+  padding: 80px 20px; /* Increased padding for spacious feel */
   display: flex;
   flex-direction: column; /* Align items vertically */
-  align-items: center; /* Center items horizontally */
-  margin-bottom: 0px; /* Increased margin for separation */
+  align-items: center;
+  margin-top: 100px;
+  height: auto;
+  min-height: 85vh;
+  margin-bottom: 100px; /* Increased margin for separation */
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
   position: relative;
-  min-height: auto;
-  padding-bottom: 0px;
-  height: 80vh;
+}
+
+.show-more-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .faq-title {
   font-size: 3rem;
-  margin-top: -100px;  
+  margin-top: -50px;  
   margin-bottom: 120px;
   color: #00e5ff;
   font-weight: 700;
@@ -40,8 +48,30 @@
 }
 
 .faq-item:hover {
-  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
   border-image: linear-gradient(45deg, #00f0ff, #9f00ff) 1;
+}
+
+.show-more-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #00e5ff;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+  background-color: #00bcd4;
+}
+
+.faq-icon.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
 }
 
 .faq-question {
@@ -57,7 +87,6 @@
   align-items: center;
   cursor: pointer;
   font-weight: 700;
-  transition: background 0.2s ease;
 }
 
 .faq-question:hover {
@@ -75,15 +104,17 @@
 }
 
 .faq-answer {
-  max-height: 0;
+  transform: scaleY(0);
+  transform-origin: top;
   opacity: 0;
+  height: auto;
   overflow: hidden;
   padding: 0 25px;
-  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 }
 
 .faq-item.open .faq-answer {
-  max-height: 500px; /* Adjust as needed */
+  transform: scaleY(1);
   opacity: 1;
   padding-bottom: 20px;
 }
