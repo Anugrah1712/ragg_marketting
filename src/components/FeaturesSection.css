@@ -432,8 +432,8 @@
 
   .pricing-card {
     flex: 0 0 auto;
-    width: 250px; /* Fixed width for consistent scaling */
-    max-height: 550px;
+    width: 230px; /* Fixed width for consistent scaling */
+    max-height: 620px;
   }
 
   .badge-popular {
