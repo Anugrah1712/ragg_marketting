@@ -200,6 +200,7 @@
   .contact-form-container {
     padding: 20px 15px;
     margin: 30px 10px;
+    align-self: center;
   }
 
 .contact-form-container h1{
@@ -224,11 +225,13 @@
     margin-bottom: 25px; /* increase spacing if needed */
     text-align: center;
     color: #bbbdbd;
+
   }
 
   .contact-form-description {
     font-size: 1rem;
     margin-bottom: 20px;
+    align-self: center;
   }
 
   .contact-form input,
@@ -236,15 +239,19 @@
     font-size: 0.85rem;
     padding: 6px 8px;
     min-width: 100%;
+    margin-left: 0;
+    align-self: center;
   }
 
   .contact-submit-btn {
     font-size: 1rem;
     padding: 12px 24px;
+    align-self: center;
   }
 
   .submit-message {
     font-size: 1rem;
     padding: 20px 0;
+    align-self: center;
   }
 }
