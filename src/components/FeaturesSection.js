@@ -1,5 +1,3 @@
-// FeaturesSection.js
-
 import React, { useEffect, useRef, useState } from 'react';
 import './FeaturesSection.css';
 
@@ -62,7 +60,7 @@ const FeaturesSection = () => {
       <h2 className="features-title">Powerful Features for Smarter Conversations</h2>
       <div className="features-grid">
         {features.map((feature, index) => (
-          <div className="feature-card" key={index}>
+          <div className="feature-card" key={index} tabIndex={0}>
             <h3>{feature.title}</h3>
             <p>{feature.description}</p>
           </div>

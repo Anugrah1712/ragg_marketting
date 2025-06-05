@@ -1,59 +1,120 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './ContactForm.css';
 
-const ContactForm = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const form = document.querySelector('.contact-form-container');
-      const scrollY = window.scrollY;
-      // if (form) {
-      //   form.style.transform = `translateY(${scrollY * 0.05}px)`; // subtle effect
-      // }
-    };
+function ContactForm() {
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleChange = (e) => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
-    <section id="contact" className="contact-section-wrapper">
-      {/* Contact Us Info Section */}
-      <div className="contact-us-info">
-        <h2>Contact Us</h2>
-        <p>Have questions, need support, or want to schedule a demo? We’re here to help.</p>
+    <section id="contact" className="contact-form-container">
+      <h1>Contact Us</h1>
+      <p className="contact-form-description">
+        We’re here to help you explore, integrate, and succeed with AI. Whether you need technical support, have a sales inquiry, or want to schedule a demo — reach out anytime.
+      </p>
 
-        <div className="contact-info-block">
-          <h3>General Inquiries & Support</h3>
-          <p>Email: <a href="mailto:support@gts.ai">support@gts.ai</a></p>
-          <p>Phone: +91-XXXXXXXXXX</p>
-          <p>Hours: Monday to Friday, 9:00 AM – 6:00 PM IST</p>
+      <div className="contact-form-block">
+        {/* Contact Info */}
+        <div className="contact-form-info">
+          <div className="contact-form-info-section">
+            <h3>General Inquiries & Support</h3>
+            <p>📧 Email: <a href="mailto:support@gts.ai">support@gts.ai</a></p>
+            <p>📞 Phone: +91-XXXXXXXXXX</p>
+            <p>🕘 Hours: Monday to Friday, 9:00 AM – 6:00 PM IST</p>
+          </div>
+          <div className="contact-form-info-section">
+            <h3>Sales & Partnerships</h3>
+            <p>📧 Email: <a href="mailto:sales@gts.ai">sales@gts.ai</a></p>
+            <p>Let’s collaborate — we offer enterprise licensing, SaaS deployment, and custom integrations for organizations of all sizes.</p>
+          </div>
+          <div className="contact-form-info-section">
+            <h3>Request a Demo</h3>
+            <p>See GPTBOT in action with a live walkthrough tailored to your business.</p>
+            <p>📧 Email: <a href="mailto:demo@gts.ai">demo@gts.ai</a></p>
+            <p>📅 Schedule a session: <a href="#book-demo">Book a Demo</a></p>
+          </div>
+          <div className="contact-form-info-section">
+            <h3>Office Address</h3>
+            <address>
+              GTS Technologies Pvt. Ltd.<br />
+              123 Innovation Park, Hinjewadi Phase II<br />
+              Pune, Maharashtra – 411057<br />
+              India
+            </address>
+          </div>
         </div>
 
-        <div className="contact-info-block">
-          <h3>Partnerships & Business Opportunities</h3>
-          <p>Email: <a href="mailto:partnerships@gts.ai">partnerships@gts.ai</a></p>
-        </div>
+        {/* Contact Form */}
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <h3>Send Us a Message</h3>
 
-        <div className="contact-info-block">
-          <h3>Product Demo Requests</h3>
-          <p>Interested in seeing GPTBOT in action? Request a live demo tailored to your industry needs.</p>
-          <p>Email: <a href="mailto:demo@gts.ai">demo@gts.ai</a></p>
-        </div>
+          {submitted ? (
+            <p className="submit-message">
+              Thank you for reaching out! We will get back to you soon.
+            </p>
+          ) : (
+            <>
+              <label>
+                Name
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your name"
+                />
+              </label>
 
-        <div className="contact-info-block">
-          <h3>Office Address</h3>
-          <address>
-            GTS Technologies Pvt. Ltd.<br />
-            123 Innovation Park, Hinjewadi Phase II<br />
-            Pune, Maharashtra – 411057<br />
-            India
-          </address>
-        </div>
+              <label>
+                Email
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="you@example.com"
+                />
+              </label>
 
-        
+              <label>
+                Subject
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Subject (optional)"
+                />
+              </label>
+
+              <label>
+                Message
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Write your message here"
+                />
+              </label>
+
+              <button type="submit" className="contact-submit-btn">
+                Send Message
+              </button>
+            </>
+          )}
+        </form>
       </div>
     </section>
   );
-};
+}
 
 export default ContactForm;

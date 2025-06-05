@@ -1,15 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  background-color: #000000; 
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-.app-container {
-  display: flex;
-  flex-direction: column;
-}
-
-html {
-  scroll-padding-top: 100px; /* Adjust to match or slightly exceed your header height */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000; /* Black background */
+  color: #e0f7fa; /* Optional: light text color for contrast */
 }

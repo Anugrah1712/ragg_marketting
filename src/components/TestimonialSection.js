@@ -1,80 +1,59 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './TestimonialSection.css';
+import React from 'react';
+import './FeaturesSection.css'; // Reuse same styles
 
 const testimonials = [
   {
+    quote: "GPTBOT has drastically reduced the time our legal team spends on reviewing contracts.",
+    author: "— Legal Consultant, Mid-Sized Law Firm",
+    detail: "We now get accurate answers to clause-specific questions within seconds, allowing us to focus on more strategic legal work.",
     stars: 5,
-    quote:
-      'GPTBOT has become our go-to assistant for internal knowledge retrieval.',
-    detail:
-      'Employees now get instant, policy-based answers to everyday queries, reducing dependency on manual HR support and improving efficiency.',
-    name: 'HR Operations Manager',
-    role: 'Global IT Services Company',
   },
   {
+    quote: "It’s transformed how our students engage with complex AI topics.",
+    author: "— Professor of AI & Data Science, University Department",
+    detail: "Students use GPTBOT to clarify concepts, summarize research papers, and prepare coursework more independently and confidently.",
     stars: 5,
-    quote:
-      'We’ve integrated GPTBOT into our client onboarding process—game changer.',
-    detail:
-      'By automating responses from strategy decks and past proposals, GPTBOT accelerates early client interactions and keeps the team focused on high-value tasks.',
-    name: 'Strategy Consultant',
-    role: 'Boutique Advisory Firm',
   },
   {
-    stars: 5,
-    quote:
-      'Reliable, secure, and completely under our control—exactly what we needed.',
-    detail:
-      'The self-hosted deployment model allowed us to meet strict compliance and data privacy requirements without compromising performance.',
-    name: 'CIO',
-    role: 'Financial Services Enterprise',
+    quote: "Employees no longer flood HR with routine questions—GPTBOT handles it all.",
+    author: "— HR Manager, Global Tech Services",
+    detail: "We uploaded our policies and procedures, and now staff just ask GPTBOT directly. It’s cut internal query handling time in half.",
+    stars: 4,
   },
   {
+    quote: "We’ve added GPTBOT to our client toolkit—it delivers insights in seconds.",
+    author: "— Strategy Consultant, Boutique Advisory Firm",
+    detail: "It helps our team analyze documents, extract key points, and generate slides faster, without missing important details.",
     stars: 5,
-    quote: 'GPTBOT makes document-heavy workflows manageable.',
-    detail:
-      'Extracting insights from long research reports used to be time-consuming. Now, it’s as simple as asking a question and getting context-rich responses instantly.',
-    name: 'Senior Analyst',
-    role: 'Research and Advisory Group',
   },
   {
+    quote: "We trust GPTBOT for secure, high-speed document understanding in a regulated environment.",
+    author: "— CIO, Financial Compliance Firm",
+    detail: "From indexing to retrieval, everything stays on-premise. It meets our compliance and audit requirements perfectly.",
     stars: 5,
-    quote:
-      'GPTBOT helped reduce over 60 hours of manual document review each month.',
-    detail:
-      'By enabling natural language queries on complex contracts and legal agreements, GPTBOT streamlined internal processes and improved turnaround times significantly.',
-    name: 'Legal Consultant',
-    role: 'Mid-Sized Law Firm',
+  },
+  {
+    quote: "Our support team now solves customer issues faster, without digging through manuals.",
+    author: "— Customer Experience Lead, Consumer Electronics Brand",
+    detail: "By uploading our product guides and troubleshooting documents, GPTBOT has become our always-available, accurate assistant.",
+    stars: 4,
   },
 ];
 
 const TestimonialSection = () => {
-  const sectionRef = useRef();
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setVisible(true),
-      { threshold: 0.2 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="testimonials"
-      ref={sectionRef}
-      className={`testimonial-section ${visible ? 'visible' : ''}`}
-    >
-      <h2 className="testimonial-title">Trusted by Teams & Builders</h2>
-      <div className="testimonial-grid">
+    <section id="testimonials" className="features-section">
+      <h2 className="features-title">What People Are Saying</h2>
+      <div className="features-grid testimonials-grid">
         {testimonials.map((t, idx) => (
-          <div className="testimonial-card" key={idx} style={{ animationDelay: `${idx * 0.2}s` }}>
-            <div className="stars">{'★'.repeat(t.stars)}</div>
-            <p className="quote">“{t.quote}”</p>
-            <p className="detail">{t.detail}</p>
-            <div className="name-role">— {t.name}, <span>{t.role}</span></div>
+          <div key={idx} className="feature-card">
+            <p style={{ fontStyle: 'italic', marginBottom: '10px' }}>"{t.quote}"</p>
+            <p style={{ fontWeight: 600, marginBottom: '10px', color: '#00eaff' }}>{t.author}</p>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>{t.detail}</p>
+            <div style={{ marginTop: '15px', color: '#FFD700' }}>
+              {'★'.repeat(t.stars)}
+              {'☆'.repeat(5 - t.stars)}
+            </div>
           </div>
         ))}
       </div>

@@ -1,10 +1,10 @@
-// Header.js
-
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import logo from '../assets/logo.png';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -13,11 +13,14 @@ const Header = () => {
       const offsetPosition = elementPosition - headerOffset;
 
       window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  }
-};
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+
+      // Close mobile menu after click
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <header className="header">
@@ -25,7 +28,16 @@ const Header = () => {
         <div className="logo" onClick={() => scrollToSection('hero')} style={{ cursor: 'pointer' }}>
           <img src={logo} alt="GTS logo" />
         </div>
-        <nav className="nav">
+
+        {/* Hamburger Icon */}
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+        </div>
+
+        {/* Nav */}
+        <nav className={`nav ${menuOpen ? 'show' : ''}`}>
           <ul className="nav-links">
             {[
               { label: 'Features', id: 'features' },
@@ -34,7 +46,7 @@ const Header = () => {
               { label: 'Testimonials', id: 'testimonials' },
               { label: 'Pricing', id: 'pricing' },
               { label: 'FAQs', id: 'faq' },
-              { label: 'Contact', id: 'contact' }
+              { label: 'Contact', id: 'contact' },
             ].map(({ label, id }) => (
               <li key={id}>
                 <button className="nav-link" onClick={() => scrollToSection(id)}>
