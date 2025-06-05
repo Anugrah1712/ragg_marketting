@@ -424,7 +424,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 8px;
-    transform: scale(0.90); /* Scale down the entire grid */
+    transform: scale(0.80); /* Scale down the entire grid */
     transform-origin: top center;
     overflow-x: auto;
     padding: 0 0 20px;
@@ -432,7 +432,8 @@
 
   .pricing-card {
     flex: 0 0 auto;
-    width: 300px; /* Fixed width for consistent scaling */
+    width: 270px; /* Fixed width for consistent scaling */
+    max-height: 80px;
   }
 
   .badge-popular {
