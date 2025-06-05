@@ -433,12 +433,12 @@
   .pricing-card {
     flex: 0 0 auto;
     width: 230px; /* Fixed width for consistent scaling */
-    max-height: 640px;
+    max-height: 655px;
   }
 
   .badge-popular {
     transform: scale(0.7);
-    top: 3px;
+    top: 10px;
     right: -6px;
   }
 }
