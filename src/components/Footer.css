@@ -111,11 +111,12 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 20px 10px;
   }
 
   .footer-links,
@@ -123,9 +124,29 @@
   .footer-legal,
   .footer-logo-section {
     flex: 1 1 100%;
+    margin-bottom: 16px;
   }
 
   .footer-logo {
-    margin: 0 auto 20px;
+    margin: 0 auto 12px;
+    max-width: 120px; /* optionally reduce logo size */
+  }
+
+  .footer-links a,
+  .footer-contact p,
+  .footer-legal p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .footer-legal {
+    font-size: 0.75rem;
+    color: #aaa;
+  }
+
+  .footer-contact p {
+    font-size: 0.85rem;
   }
 }
+

@@ -198,60 +198,55 @@
 /* Responsive - Mobile Devices */
 @media (max-width: 600px) {
   .contact-form-container {
-    padding: 20px 15px;
-    margin: 30px 10px;
-    align-self: center;
+    padding: 15px 10px;
+    margin: 20px 8px;
   }
 
-.contact-form-container h1{
-  font-size: 2.5rem;
-  text-align: center;
-  font-weight: 300;
-  margin-bottom: 1rem; /* reduce bottom margin to tighten space */
-  color: #00eaff;
-  text-shadow:
-    0 0 5px #00eaff,
-    0 0 10px #00eaff;
-  opacity: 0;
-  animation: fadeInText 1.5s ease forwards;
-  animation-delay: 0.4s;
-}
+  .contact-form-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
 
   .contact-form-container h2,
   .contact-form h3,
   .contact-form-info-section h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 25px; /* increase spacing if needed */
-    text-align: center;
-    color: #bbbdbd;
-
+    font-size: 1.2rem;
+    margin-bottom: 18px;
   }
 
   .contact-form-description {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    align-self: center;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
   }
 
   .contact-form input,
   .contact-form textarea {
-    font-size: 0.85rem;
-    padding: 6px 8px;
+    font-size: 0.8rem;
+    padding: 5px 8px;
     min-width: 100%;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .contact-submit-btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
     margin-left: 0;
     align-self: center;
   }
 
-  .contact-submit-btn {
-    font-size: 1rem;
-    padding: 12px 24px;
-    align-self: center;
+  .submit-message {
+    font-size: 0.9rem;
+    padding: 15px 0;
   }
 
-  .submit-message {
-    font-size: 1rem;
-    padding: 20px 0;
-    align-self: center;
+  .contact-form label {
+    margin-left: 0;
+    font-size: 0.9rem;
+    align-items: flex-start;
+  }
+
+  .contact-form {
+    align-items: center;
   }
 }
