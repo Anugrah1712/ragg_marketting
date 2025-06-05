@@ -428,17 +428,18 @@
     transform-origin: top center;
     overflow-x: auto;
     padding: 0 0 20px;
+    max-height: 665px;
   }
 
   .pricing-card {
     flex: 0 0 auto;
     width: 230px; /* Fixed width for consistent scaling */
-    max-height: 660px;
+    max-height: 665px;
   }
 
   .badge-popular {
     transform: scale(0.7);
-    top: 13px;
+    top: 20px;
     right: -6px;
   }
 }
