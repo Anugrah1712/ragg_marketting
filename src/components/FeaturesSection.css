@@ -144,32 +144,6 @@
   gap: 30px;
 }
 
-@media (max-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 280px;
-  }
-}
-
-/* Fix: Responsive pricing grid */
-.pricing-grid {
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(500px, auto);
-  gap: 30px;
-}
-
-@media (max-width: 1024px) {
-  .pricing-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Fix: Selected pricing card glow */
 .pricing-card.selected {
   transform: scale(1.05) translateZ(20px);
@@ -427,14 +401,26 @@
     display: flex !important;
     flex-direction: row !important;
     overflow-x: auto;
-    gap: 16px;
-    padding-bottom: 10px;
-    scroll-snap-type: x mandatory; /* optional smooth scroll */
+    gap: 12px;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
   }
 
   .pricing-card {
-    min-width: 280px;
+    min-width: 200px; /* much smaller width */
+    padding: 12px 14px; /* reduced internal spacing */
+    font-size: 0.85rem; /* smaller font */
     flex: 0 0 auto;
     scroll-snap-align: start;
+  }
+
+  .pricing-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 10px;
+  }
+
+  .pricing-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
   }
 }
