@@ -427,7 +427,7 @@
     transform: scale(0.65); /* Scale down the entire grid */
     transform-origin: top center;
     overflow-x: auto;
-    padding: 0 0 15px;
+    padding: 0 0 25px;
   }
 
   .pricing-card {
