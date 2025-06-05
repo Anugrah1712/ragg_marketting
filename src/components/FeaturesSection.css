@@ -129,13 +129,13 @@
   gap: 30px;
 }
 
-/* Mobile: 2 columns, 3 rows */
+/* Mobile: 2 columns, 3 rows
 @media (max-width: 768px) {
   .use-case-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 280px;
   }
-}
+} */
 
 /* Responsive override for testimonial grid if needed */
 .testimonials-grid {
@@ -376,6 +376,7 @@
   .testimonials-grid{
     grid-template-columns: 1fr !important;
     grid-auto-rows: auto !important;
+    justify-content: center; 
     gap: 20px;
   }
 
@@ -419,44 +420,24 @@
 
 @media (max-width: 600px) {
   .pricing-grid {
-    display: grid !important;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 0 12px;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    transform: scale(0.78); /* Scale down the entire grid */
+    transform-origin: top center;
+    overflow-x: auto;
+    padding: 0 0 20px;
   }
 
   .pricing-card {
-    width: 100%;
-    padding: 16px 18px;
-    font-size: 0.85rem;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 255, 255, 0.06);
-  }
-
-  .pricing-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-  }
-
-  .pricing-card p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  .pricing-card ul {
-    padding-left: 18px;
-    margin-top: 8px;
-  }
-
-  .pricing-card ul li {
-    font-size: 0.82rem;
-    margin-bottom: 6px;
+    flex: 0 0 auto;
+    width: 300px; /* Fixed width for consistent scaling */
   }
 
   .badge-popular {
-    font-size: 0.7rem;
-    padding: 3px 9px;
-    top: -8px;
-    right: -8px;
+    transform: scale(0.9);
+    top: -6px;
+    right: -6px;
   }
 }
