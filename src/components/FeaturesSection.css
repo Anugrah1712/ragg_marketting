@@ -374,3 +374,54 @@
   }
 }
 
+/* 🔧 Extra responsive fixes for small devices (e.g. ≤600px) */
+@media (max-width: 600px) {
+  .features-grid,
+  .how-it-works-grid,
+  .use-case-grid,
+  .testimonials-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 20px;
+  }
+
+  .feature-card,
+  .faq-item,
+  .pricing-card {
+    padding: 16px 18px !important;
+    font-size: 0.95rem;
+  }
+
+  .feature-card h3,
+  .faq-item h3,
+  .pricing-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .feature-card p,
+  .faq-item p,
+  .pricing-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.4;
+  }
+
+  .features-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 16px !important;
+  }
+
+  .features-section {
+    padding: 25px 10px !important;
+  }
+
+  .faq-container {
+    padding: 15px !important;
+    max-width: 100% !important;
+  }
+
+  .faq-show-more {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}
