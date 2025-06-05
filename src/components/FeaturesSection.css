@@ -420,22 +420,22 @@
 @media (max-width: 600px) {
   .pricing-grid {
     display: grid !important;
-    grid-template-columns: 1fr; /* one card per row */
-    grid-auto-rows: auto;
-    gap: 16px;
-    padding: 0 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 12px;
   }
 
   .pricing-card {
     width: 100%;
-    padding: 14px 16px; /* smaller padding */
-    font-size: 0.85rem; /* smaller font */
+    padding: 16px 18px;
+    font-size: 0.85rem;
     border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.06);
   }
 
   .pricing-card h3 {
-    font-size: 1rem;
-    margin-bottom: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
   }
 
   .pricing-card p {
@@ -443,10 +443,20 @@
     line-height: 1.4;
   }
 
+  .pricing-card ul {
+    padding-left: 18px;
+    margin-top: 8px;
+  }
+
+  .pricing-card ul li {
+    font-size: 0.82rem;
+    margin-bottom: 6px;
+  }
+
   .badge-popular {
     font-size: 0.7rem;
-    padding: 4px 10px;
-    top: -6px;
-    right: -6px;
+    padding: 3px 9px;
+    top: -8px;
+    right: -8px;
   }
 }
