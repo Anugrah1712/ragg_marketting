@@ -198,8 +198,8 @@
 /* Responsive - Mobile Devices */
 @media (max-width: 600px) {
   .contact-form-container {
-    padding: 15px 10px;
-    margin: 20px 8px;
+    transform: scale(0.92);
+    transform-origin: top center;
   }
 
   .contact-form-container h1 {

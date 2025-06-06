@@ -113,40 +113,44 @@
 /* Responsive */
 @media (max-width: 600px) {
   .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 15px 10px;
+    gap: 20px;
+    transform: scale(0.95);
+    transform-origin: top center;
   }
 
+  .footer-logo-section,
   .footer-links,
   .footer-contact,
-  .footer-legal,
-  .footer-logo-section {
-    flex: 1 1 100%;
-    margin-bottom: 16px;
+  .footer-legal {
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin-bottom: 12px;
   }
 
   .footer-logo {
-    margin: 0 auto 12px;
-    max-width: 120px; /* optionally reduce logo size */
+    max-width: 100px;
+    margin-bottom: 8px;
   }
 
   .footer-links a,
   .footer-contact p,
   .footer-legal p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin-bottom: 6px;
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
 
   .footer-legal {
+    flex: 0 0 100%;
+    text-align: center;
     font-size: 0.75rem;
     color: #aaa;
-  }
-
-  .footer-contact p {
-    font-size: 0.85rem;
+    margin-top: 10px;
   }
 }
 
