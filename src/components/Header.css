@@ -2,7 +2,7 @@
 .header {
   background-color: black;
   color: #fff;
-  padding: 0rem 1.5rem; /* Slightly reduced horizontal padding */
+  padding: 0rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -17,11 +17,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allow wrap on small screens */
+  flex-wrap: wrap;
 }
 
 .logo img {
-  height: 60px; /* Slightly smaller logo */
+  height: 60px;
 }
 
 /* Nav styling */
@@ -29,13 +29,13 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem; /* Reduced spacing between buttons */
+  gap: 0.6rem;
   padding: 0;
   margin: 0;
 }
 
 .nav-link {
-  width: 120px; /* Smaller buttons */
+  width: 120px;
   height: 38px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -64,9 +64,9 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: row; /* ✅ Keep items in a row */
-    align-items: center;  /* ✅ Align items in center */
-    flex-wrap: wrap;      /* ✅ Allow wrapping if needed */
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
   }
 
@@ -75,8 +75,8 @@
   }
 
   .nav-links {
-    justify-content: center; /* ✅ Center nav buttons horizontally */
-    flex-wrap: wrap;         /* ✅ Wrap to next line if needed */
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
   }
 
@@ -87,6 +87,7 @@
     padding: 0.3rem 0.6rem;
   }
 }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -103,7 +104,7 @@
   border-radius: 2px;
 }
 
-/* Rotate bars when open */
+/* Hamburger open state */
 .bar.open:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -114,7 +115,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Responsive styles */
+/* Responsive nav logic */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -135,4 +136,31 @@
     gap: 10px;
     margin-top: 10px;
   }
+}
+
+/* 🔥 Overlay for mobile nav */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 🔍 Blur hero when menu is open */
+body.menu-open .hero-container {
+  filter: blur(4px);
+  pointer-events: none;
+  transition: filter 0.3s ease;
 }
