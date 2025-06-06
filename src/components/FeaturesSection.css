@@ -1,5 +1,6 @@
+/* Features Section */
 .features-section {
-  padding: 30px 20px 40px; /* reduced top padding */
+  padding: 30px 20px 40px;
   background: #0a0a0a;
   color: #d0f0ff;
   text-align: center;
@@ -9,7 +10,7 @@
 .features-title {
   font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 1rem; /* reduce bottom margin to tighten space */
+  margin-bottom: 1rem;
   color: #00eaff;
   text-shadow:
     0 0 5px #00eaff,
@@ -19,29 +20,25 @@
   animation-delay: 0.4s;
 }
 
-/* Grid container */
+/* Grid Layout */
 .features-grid {
   display: grid;
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  /* 2 rows, 4 columns on desktop */
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(260px, auto);
   perspective: 800px;
 }
 
-/* Cards */
+/* Feature Cards */
 .feature-card {
   background: #121212;
   border-radius: 15px;
   padding: 25px 30px;
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
   border: 3px solid transparent;
-  transition: 
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-image-source 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-image-source 0.3s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -49,7 +46,6 @@
   text-align: left;
   color: #eff1f1;
   font-weight: 500;
-  will-change: transform, box-shadow, border-image-source;
   transform-style: preserve-3d;
 }
 
@@ -61,7 +57,6 @@
   transition: color 0.3s ease;
 }
 
-/* h3 color change on card hover/focus */
 .feature-card:hover h3,
 .feature-card:focus h3 {
   color: #259999;
@@ -73,7 +68,6 @@
   flex-grow: 1;
 }
 
-/* Hover effect on card */
 .feature-card:hover,
 .feature-card:focus {
   transform: scale(1.05) translateZ(20px);
@@ -84,73 +78,34 @@
   outline: none;
 }
 
-/* Responsive mobile: 4 rows, 2 columns */
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 280px;
-  }
-  
-  .features-section {
-    padding: 20px 15px 30px; /* reduced top/bottom padding on mobile */
-  }
-  
-  .features-title {
-    font-size: 2.2rem;
-    margin-bottom: 20px; /* less margin bottom */
-  }
-  
-  .feature-card {
-    padding: 20px 25px;
-  }
-}
-
-/* Override grid layout for How It Works section */
+/* How It Works Section Grid */
 .how-it-works-grid {
-  /* PC: 2 rows, 3 columns */
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(260px, auto);
   gap: 30px;
 }
 
-/* Mobile: 2 columns, 3 rows */
-@media (max-width: 768px) {
-  .how-it-works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 280px;
-  }
-}
-
-/* Override grid layout for Use Case section */
+/* Use Case Grid */
 .use-case-grid {
-  /* PC: 3 columns, 2 rows */
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(260px, auto);
   gap: 30px;
 }
 
-/* Mobile: 2 columns, 3 rows
-@media (max-width: 768px) {
-  .use-case-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 280px;
-  }
-} */
-
-/* Responsive override for testimonial grid if needed */
+/* Testimonials Grid */
 .testimonials-grid {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(260px, auto);
   gap: 30px;
 }
-/* Fix: Responsive pricing grid */
+
+/* Pricing Grid */
 .pricing-grid {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(500px, auto);
   gap: 30px;
 }
 
-/* Fix: Selected pricing card glow */
 .pricing-card.selected {
   transform: scale(1.05) translateZ(20px);
   box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
@@ -173,32 +128,25 @@
   z-index: 10;
 }
 
-.badge-popular {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: linear-gradient(45deg, #00f0ff, #9f00ff);
-  color: #fff;
-  padding: 6px 12px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-  z-index: 10;
+/* FAQ Section */
+.faq-container {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #00eaff44;
+  background-color: #111;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
-/* Optional: Container for the FAQ "Show More" button */
-/* FAQ List Vertical Layout */
 .faq-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 70vh;
-  overflow-y: auto;
   padding: 0 10px;
 }
 
-/* Each FAQ item (like a clickable accordion) */
 .faq-item {
   background: #121212;
   color: #d0f0ff;
@@ -206,10 +154,7 @@
   border-radius: 12px;
   border: 3px solid transparent;
   cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-image-source 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-image-source 0.3s ease;
 }
 
 .faq-item h3 {
@@ -226,7 +171,6 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Hover effect */
 .faq-item:hover {
   transform: scale(1.05) translateZ(20px);
   box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
@@ -234,57 +178,6 @@
   border-image-slice: 1;
   z-index: 2;
   outline: none;
-}
-
-.features-section {
-  padding: 50px 20px;
-  color: #e0f7fa;
-  background-color: #0a0a0a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.features-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #00eaff;
-}
-
-.faq-container {
-  max-height: 70vh;
-  overflow-y: auto;
-  padding: 20px;
-  border-radius: 12px;
-  border: 2px solid #00eaff44;
-  background-color: #111;
-  max-width: 950px; /* 👈 Control FAQ block width */
-  margin: 0 auto;   /* 👈 Center horizontally */
-}
-
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Restrict hover to block only */
-.faq-item {
-  padding: 15px 20px;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 2px solid transparent;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.faq-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-  border: 2px solid transparent;
-  border-image: linear-gradient(45deg, #00f0ff, #9f00ff);
-  border-image-slice: 1;
 }
 
 .faq-question {
@@ -301,7 +194,6 @@
   margin-right: 10px;
 }
 
-/* Glowing expand/collapse icon */
 .faq-icon {
   font-size: 1.4rem;
   color: #00eaff;
@@ -313,7 +205,6 @@
   text-shadow: 0 0 8px #00f0ff, 0 0 12px #9f00ff;
 }
 
-/* Hidden by default, shown on click */
 .faq-answer {
   margin-top: 10px;
   font-size: 1rem;
@@ -326,7 +217,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Show More button */
 .faq-show-more {
   display: inline-block;
   padding: 15px 25px;
@@ -349,7 +239,42 @@
   border-image-slice: 1;
 }
 
+/* Tablet & Mobile (≤768px) */
 @media (max-width: 768px) {
+  .features-grid {
+    display: flex !important;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+  }
+
+  .feature-card {
+    flex: 0 0 auto;
+    width: 250px;
+    scroll-snap-align: start;
+  }
+
+  .features-section {
+    padding: 20px 15px 30px;
+  }
+
+  .features-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .how-it-works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 280px;
+  }
+
+  .use-case-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 280px;
+  }
+
   .faq-item {
     padding: 12px 15px;
   }
@@ -368,32 +293,31 @@
   }
 }
 
-/* 🔧 Extra responsive fixes for small devices (e.g. ≤600px) */
+/* Small Devices (≤600px) */
 @media (max-width: 600px) {
   .features-grid,
   .how-it-works-grid,
   .use-case-grid,
-  .testimonials-grid{
+  .testimonials-grid {
     grid-template-columns: 1fr !important;
     grid-auto-rows: auto !important;
-    justify-content: center; 
+    justify-content: center;
     gap: 20px;
   }
 
   .feature-card,
-  .faq-item{
+  .faq-item {
     padding: 16px 18px !important;
     font-size: 0.95rem;
   }
 
   .feature-card h3,
-  .faq-item h3{
+  .faq-item h3 {
     font-size: 1.15rem !important;
   }
 
   .feature-card p,
-  .faq-item p
-   {
+  .faq-item p {
     font-size: 0.95rem !important;
     line-height: 1.4;
   }
@@ -416,15 +340,13 @@
     font-size: 0.9rem;
     padding: 10px 16px;
   }
-}
 
-@media (max-width: 600px) {
   .pricing-grid {
     display: flex !important;
     flex-direction: row;
     justify-content: center;
     gap: 8px;
-    transform: scale(0.80); /* Scale down the entire grid */
+    transform: scale(0.80);
     transform-origin: top center;
     overflow-x: auto;
     padding: 0 0 20px;
@@ -433,7 +355,7 @@
 
   .pricing-card {
     flex: 0 0 auto;
-    width: 230px; /* Fixed width for consistent scaling */
+    width: 230px;
     max-height: 665px;
   }
 
