@@ -13,17 +13,20 @@ function ContactForm() {
   e.preventDefault();
   setError(false);
 
-  const form = new FormData();
-  form.append("Name", formData.name);
-  form.append("Email", formData.email);
-  form.append("Subject", formData.subject);
-  form.append("Message", formData.message);
-  form.append("Timestamp", new Date().toLocaleString());
+  const payload = {
+    Name: formData.name,
+    Email: formData.email,
+    Subject: formData.subject,
+    Message: formData.message,
+  };
 
   try {
     const response = await fetch("https://script.google.com/macros/s/AKfycbwDogoXgaNwKch-soBs78BSUHYTRmzn2EDwJ0PZVtR_AVAlQCHOvYX99wwkv6yVRuY7/exec", {
       method: "POST",
-      body: form, // No headers needed, browser sets them correctly
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) throw new Error("Failed to submit");
