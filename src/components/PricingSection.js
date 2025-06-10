@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './FeaturesSection.css';
 
 const pricingPlans = [
@@ -48,6 +48,19 @@ const pricingPlans = [
 
 const PricingSection = () => {
   const [selected, setSelected] = useState('Pro');
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.pricing-card');
+    if (cards.length === 3) {
+      const middleCard = cards[1];
+      const scrollOffset = middleCard.offsetLeft - (grid.clientWidth / 2) + (middleCard.clientWidth / 2);
+      grid.scrollLeft = scrollOffset;
+    }
+  }, []);
 
   return (
     <section id="pricing" className="features-section">
@@ -55,7 +68,8 @@ const PricingSection = () => {
       <p style={{ maxWidth: '800px', margin: '0 auto 30px', fontSize: '1.1rem' }}>
         Choose a plan that fits your scale, team, and security needs.
       </p>
-      <div className="features-grid pricing-grid">
+
+      <div ref={gridRef} className="features-grid pricing-grid">
         {pricingPlans.map((plan) => (
           <div
             key={plan.name}
