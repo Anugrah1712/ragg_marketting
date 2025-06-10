@@ -81,9 +81,12 @@ function ContactForm() {
           <h3>Send Us a Message</h3>
 
           {submitted ? (
+            <>
+            {console.log("Submitted is true")}
             <p className="submit-message">
               Thank you for reaching out! We will get back to you soon.
             </p>
+            </>
           ) : (
             <>
               <label>
