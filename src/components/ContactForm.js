@@ -13,16 +13,19 @@ function ContactForm() {
     e.preventDefault();
     setError(false);
 
-    const form = new FormData();
-    form.append("Name", formData.name);
-    form.append("Email", formData.email);
-    form.append("Subject", formData.subject);
-    form.append("Message", formData.message);
+    const params = new URLSearchParams();
+    params.append("Name", formData.name);
+    params.append("Email", formData.email);
+    params.append("Subject", formData.subject);
+    params.append("Message", formData.message);
 
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbwDogoXgaNwKch-soBs78BSUHYTRmzn2EDwJ0PZVtR_AVAlQCHOvYX99wwkv6yVRuY7/exec", {
         method: "POST",
-        body: form,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: params.toString(),
       });
 
       if (!response.ok) throw new Error("Failed to submit");
