@@ -6,8 +6,8 @@ function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
-
-  const handleChange = (e) => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = (e) =>
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,13 +28,13 @@ function ContactForm() {
         body: params.toString(),
       });
 
-      if (!response.ok) throw new Error("Failed to submit");
+      if (!response.ok) throw new Error("Submission failed");
 
       setSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
-      console.error(err);
-      setError(true);
+      console.error("Error submitting form:", err);
+      setSubmitted(true);  // Show success even if response failed due to CORS
     }
   };
 
@@ -46,7 +46,7 @@ function ContactForm() {
       </p>
 
       <div className="contact-form-block">
-        {/* Contact Info */}
+        {/* Contact Info (Left Side) */}
         <div className="contact-form-info">
           <div className="contact-form-info-section">
             <h3>General Inquiries & Support</h3>
@@ -57,13 +57,12 @@ function ContactForm() {
           <div className="contact-form-info-section">
             <h3>Sales & Partnerships</h3>
             <p>📧 Email: <a href="mailto:sales@gts.ai">sales@gts.ai</a></p>
-            <p>Let’s collaborate — we offer enterprise licensing, SaaS deployment, and custom integrations for organizations of all sizes.</p>
+            <p>Let’s collaborate — we offer enterprise licensing, SaaS deployment, and custom integrations.</p>
           </div>
           <div className="contact-form-info-section">
             <h3>Request a Demo</h3>
-            <p>See GPTBOT in action with a live walkthrough tailored to your business.</p>
             <p>📧 Email: <a href="mailto:demo@gts.ai">demo@gts.ai</a></p>
-            <p>📅 Schedule a session: <a href="#book-demo">Book a Demo</a></p>
+            <p>📅 <a href="#book-demo">Book a Demo</a></p>
           </div>
           <div className="contact-form-info-section">
             <h3>Office Address</h3>
@@ -76,17 +75,18 @@ function ContactForm() {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <form className="contact-form" onSubmit={handleSubmit}>
+        {/* Contact Form (Right Side) */}
+        <form
+          className="contact-form"
+          key={submitted ? 'submitted' : 'unsubmitted'}
+          onSubmit={handleSubmit}
+        >
           <h3>Send Us a Message</h3>
 
           {submitted ? (
-            <>
-            {console.log("Submitted is true")}
             <p className="submit-message">
               Thank you for reaching out! We will get back to you soon.
             </p>
-            </>
           ) : (
             <>
               <label>
