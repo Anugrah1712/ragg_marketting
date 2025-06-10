@@ -4,13 +4,38 @@ import './ContactForm.css';
 function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+
 
   const handleChange = (e) => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError(false);
+
+  const form = new FormData();
+  form.append("Name", formData.name);
+  form.append("Email", formData.email);
+  form.append("Subject", formData.subject);
+  form.append("Message", formData.message);
+  form.append("Timestamp", new Date().toLocaleString());
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwDogoXgaNwKch-soBs78BSUHYTRmzn2EDwJ0PZVtR_AVAlQCHOvYX99wwkv6yVRuY7/exec", {
+      method: "POST",
+      body: form, // No headers needed, browser sets them correctly
+    });
+
+    if (!response.ok) throw new Error("Failed to submit");
+
     setSubmitted(true);
-  };
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  } catch (err) {
+    console.error(err);
+    setError(true);
+  }
+};
+
 
   return (
     <section id="contact" className="contact-form-container">
