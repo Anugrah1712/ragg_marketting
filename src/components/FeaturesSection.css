@@ -7,6 +7,15 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.feature-card:hover {
+  transform: scale(1) translateZ(10px);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  border-image: linear-gradient(45deg, #00f0ff, #9f00ff) 1;
+  border-image-slice: 1;
+  z-index: 2;
+}
+
+
 .features-title {
   font-size: 2.5rem;
   font-weight: 300;
@@ -66,16 +75,6 @@
   font-size: 1rem;
   line-height: 1.5;
   flex-grow: 1;
-}
-
-.feature-card:hover,
-.feature-card:focus {
-  transform: scale(1.05) translateZ(20px);
-  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
-  border-image-source: linear-gradient(45deg, #00f0ff, #9f00ff);
-  border-image-slice: 1;
-  z-index: 2;
-  outline: none;
 }
 
 /* How It Works Section Grid */
@@ -241,100 +240,38 @@
 
 /* Tablet & Mobile (≤768px) */
 @media (max-width: 768px) {
+  /* Features Grid */
   .features-grid {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 20px;
-    padding: 10px 0px 10px 200px; /* Add left padding to prevent clipping */
+    padding: 10px 16px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
+  .feature-card:active {
+  border: 3px solid transparent;
+  border-image-source: linear-gradient(45deg, #00f0ff, #9f00ff);
+  border-image-slice: 1;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+}
 
   .feature-card {
     flex: 0 0 auto;
     width: 250px;
     scroll-snap-align: start;
-    margin-left: 0 !important; /* Prevent stacking additional left margin */
-  }
-
-  .features-section {
-    padding: 20px 15px 30px;
-  }
-
-  .features-title {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-  }
-
-  .how-it-works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 280px;
-  }
-
-  .use-case-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 280px;
-  }
-}
-
-@media (max-width: 600px) {
-  .faq-container {
-    padding: 10px !important;
-    transform: scale(0.95);
-    transform-origin: top center;
-  }
-
-  .faq-item {
-    padding: 10px 14px !important;
-  }
-
-  .faq-item h3,
-  .faq-question h3 {
-    font-size: 1rem !important;
-  }
-
-  .faq-item p,
-  .faq-answer {
-    font-size: 0.85rem !important;
-  }
-
-  .faq-show-more {
-    font-size: 0.85rem;
-    padding: 8px 14px;
-  }
-
-  .faq-icon {
-    font-size: 1.2rem;
-  }
-}
-
-
-/* Small Devices (≤600px) */
-@media (max-width: 600px) {
-  .features-grid,
-  .how-it-works-grid,
-  .use-case-grid,
-  .testimonials-grid {
-    grid-template-columns: 1fr !important;
-    grid-auto-rows: auto !important;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .feature-card,
-  .faq-item {
     padding: 16px 18px !important;
     font-size: 0.95rem;
   }
 
-  .feature-card h3,
-  .faq-item h3 {
+  .feature-card h3 {
     font-size: 1.15rem !important;
   }
 
-  .feature-card p,
-  .faq-item p {
+  .feature-card p {
     font-size: 0.95rem !important;
     line-height: 1.4;
   }
@@ -348,9 +285,38 @@
     padding: 25px 10px !important;
   }
 
+  /* How It Works and Use Case Grids */
+  .how-it-works-grid,
+  .use-case-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 280px;
+  }
+
+  /* FAQ */
   .faq-container {
     padding: 15px !important;
+    transform: scale(0.95);
+    transform-origin: top center;
     max-width: 100% !important;
+  }
+
+  .faq-item {
+    padding: 10px 14px !important;
+    font-size: 0.95rem;
+  }
+
+  .faq-item h3,
+  .faq-question h3 {
+    font-size: 1rem !important;
+  }
+
+  .faq-item p,
+  .faq-answer {
+    font-size: 0.85rem !important;
+  }
+
+  .faq-icon {
+    font-size: 1.2rem;
   }
 
   .faq-show-more {
@@ -358,25 +324,26 @@
     padding: 10px 16px;
   }
 
+  /* Pricing Cards */
   .pricing-grid {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 20px 40px;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  max-height: none;
-  transform: none !important;
-}
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 40px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    max-height: none;
+    transform: none !important;
+  }
 
-.pricing-card {
-  flex: 0 0 auto;
-  width: 250px;
-  scroll-snap-align: center;
-}
+  .pricing-card {
+    flex: 0 0 auto;
+    width: 250px;
+    scroll-snap-align: center;
+  }
 
   .badge-popular {
     transform: scale(0.7);
