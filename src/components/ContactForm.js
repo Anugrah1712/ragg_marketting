@@ -68,8 +68,8 @@ function ContactForm() {
             <h3>Office Address</h3>
             <address>
               GTS Technologies Pvt. Ltd.<br />
-              123 Innovation Park, Hinjewadi Phase II<br />
-              Pune, Maharashtra – 411057<br />
+              Lucerne 403, Gulmohar Renaissance, Near Agarwal Business Hub<br />
+              Wagholi, Pune, Maharashtra – 412207<br />
               India
             </address>
           </div>
