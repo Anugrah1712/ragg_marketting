@@ -6,7 +6,7 @@ import './FeaturesSection.css'; // using the same CSS as features
 const steps = [
   {
     title: 'Ingest Your Content',
-    description: 'Upload PDFs, DOCX files, text documents, or provide URLs. GPTBOT processes and segments the content into smaller, context-preserving chunks.',
+    description: 'Upload PDFs, DOCX files, text documents, or provide URLs. GTSBOT processes and segments the content into smaller, context-preserving chunks.',
   },
   {
     title: 'Smart Embedding & Indexing',
@@ -14,7 +14,7 @@ const steps = [
   },
   {
     title: 'Give Custom Prompts',
-    description: 'Define how GPTBOT should behave using tailored system prompts. You can control tone, formality, content scope, and more—perfect for domain-specific use cases.',
+    description: 'Define how GTSBOT should behave using tailored system prompts. You can control tone, formality, content scope, and more—perfect for domain-specific use cases.',
   },
   {
     title: 'Customize Anything',
@@ -22,7 +22,7 @@ const steps = [
   },
   {
     title: 'Ask Natural Questions',
-    description: 'Users interact through text or voice. GPTBOT converts queries into semantic vectors and searches the indexed content for the most relevant information.',
+    description: 'Users interact through text or voice. GTSBOT converts queries into semantic vectors and searches the indexed content for the most relevant information.',
   },
   {
     title: 'Contextual Response Generation',

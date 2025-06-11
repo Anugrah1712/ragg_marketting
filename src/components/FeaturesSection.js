@@ -4,11 +4,11 @@ import './FeaturesSection.css';
 const features = [
   {
     title: 'Retrieval-Augmented Generation (RAG) Architecture',
-    description: 'GPTBOT intelligently retrieves relevant information from uploaded documents and web data, grounding its responses in actual content—no hallucinations, just facts.',
+    description: 'GTSBOT intelligently retrieves relevant information from uploaded documents and web data, grounding its responses in actual content—no hallucinations, just facts.',
   },
   {
     title: 'Multimodal Input Support',
-    description: 'Upload PDFs, DOCX files, plain text, or even URLs. GPTBOT can instantly analyze and extract meaning from diverse formats.',
+    description: 'Upload PDFs, DOCX files, plain text, or even URLs. GTSBOT can instantly analyze and extract meaning from diverse formats.',
   },
   {
     title: 'Vector Search with Seamless Integration',
@@ -24,11 +24,11 @@ const features = [
   },
   {
     title: 'Voice & Time-Aware Interaction',
-    description: 'Talk to GPTBOT. It listens. It speaks. With built-in speech-to-text and time-aware greetings, your interactions feel natural and human.',
+    description: 'Talk to GTSBOT. It listens. It speaks. With built-in speech-to-text and time-aware greetings, your interactions feel natural and human.',
   },
   {
     title: 'Privacy-First, Self-Hosted Deployment',
-    description: 'Deploy GPTBOT entirely on-premise with no data ever sent externally. Perfect for regulated industries like law, finance, and healthcare.',
+    description: 'Deploy GTSBOT entirely on-premise with no data ever sent externally. Perfect for regulated industries like law, finance, and healthcare.',
   },
   {
     title: 'Real-Time Document Summarization & Q&A',

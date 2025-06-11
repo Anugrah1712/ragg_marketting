@@ -13,7 +13,7 @@ const Home = () => {
         </h2>
         <p className="gts-description fade-up delay-2">
           At GTS, we develop cutting-edge AI solutions that transform the way
-          businesses interact with information. Our flagship product, GPTBOT,
+          businesses interact with information. Our flagship product, GTSBOT,
           is a powerful contextual assistant built using advanced
           Retrieval-Augmented Generation (RAG) architecture. Whether you're in
           legal, education, enterprise, or customer service, GTS empowers you

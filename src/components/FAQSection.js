@@ -3,19 +3,19 @@ import './FeaturesSection.css';
 
 const faqs = [
   {
-    question: 'What types of documents does GPTBOT support?',
-    answer: 'GPTBOT supports PDF, DOCX, TXT files, and public web URLs...',
+    question: 'What types of documents does GTSBOT support?',
+    answer: 'GTSBOT supports PDF, DOCX, TXT files, and public web URLs...',
   },
   {
-    question: 'Can GPTBOT be deployed on-premise?',
-    answer: 'Yes. GPTBOT is designed for secure, self-hosted deployment...',
+    question: 'Can GTSBOT be deployed on-premise?',
+    answer: 'Yes. GTSBOT is designed for secure, self-hosted deployment...',
   },
   {
     question: 'Which large language models are supported?',
-    answer: 'GPTBOT supports GPT-4, Llama 3, Gemini 1.5 Flash...',
+    answer: 'GTSBOT supports GPT-4, Llama 3, Gemini 1.5 Flash...',
   },
   {
-    question: 'Does GPTBOT store or share our data with third parties?',
+    question: 'Does GTSBOT store or share our data with third parties?',
     answer: 'No. All processing and storage happens within your environment...',
   },
   {
@@ -23,24 +23,24 @@ const faqs = [
     answer: 'Absolutely. You can define custom prompts...',
   },
   {
-    question: 'Does GPTBOT support voice-based interaction?',
-    answer: 'Yes. GPTBOT includes voice input and text-to-speech...',
+    question: 'Does GTSBOT support voice-based interaction?',
+    answer: 'Yes. GTSBOT includes voice input and text-to-speech...',
   },
   {
-    question: 'Can multiple users access GPTBOT at once?',
-    answer: 'Yes. GPTBOT supports concurrent user sessions...',
+    question: 'Can multiple users access GTSBOT at once?',
+    answer: 'Yes. GTSBOT supports concurrent user sessions...',
   },
   {
-    question: 'What vector databases does GPTBOT integrate with?',
-    answer: 'GPTBOT is compatible with FAISS, Pinecone, Weaviate...',
+    question: 'What vector databases does GTSBOT integrate with?',
+    answer: 'GTSBOT is compatible with FAISS, Pinecone, Weaviate...',
   },
   {
-    question: 'Can GPTBOT summarize documents or extract insights?',
-    answer: 'Yes. Users can ask GPTBOT to summarize entire documents...',
+    question: 'Can GTSBOT summarize documents or extract insights?',
+    answer: 'Yes. Users can ask GTSBOT to summarize entire documents...',
   },
   {
     question: 'Is multilingual support available?',
-    answer: 'Yes. GPTBOT can understand and respond in multiple languages...',
+    answer: 'Yes. GTSBOT can understand and respond in multiple languages...',
   },
 ];
 
