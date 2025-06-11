@@ -93,7 +93,7 @@ const PricingSection = () => {
       </div>
 
       <p style={{ textAlign: 'center', marginTop: '30px', fontSize: '1rem', color: '#e0f7fa' }}>
-        📩 Contact us at <a href="mailto:sales@gts.ai" style={{ color: '#00eaff' }}>sales@gts.ai</a> for custom quotes, demos, or government/educational discounts.
+        📩 Contact us at <a href="mailto:genaitechsol@gmail.com" style={{ color: '#00eaff' }}>genaitechsol@gmail.com</a> for custom quotes, demos, or government/educational discounts.
       </p>
     </section>
   );

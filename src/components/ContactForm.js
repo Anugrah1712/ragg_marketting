@@ -50,18 +50,18 @@ function ContactForm() {
         <div className="contact-form-info">
           <div className="contact-form-info-section">
             <h3>General Inquiries & Support</h3>
-            <p>📧 Email: <a href="mailto:support@gts.ai">support@gts.ai</a></p>
+            <p>📧 Email: <a href="mailto:genaitechsol@gmail.com">genaitechsol@gmail.com</a></p>
             <p>📞 Phone: +91 7984885953</p>
             <p>🕘 Hours: Monday to Friday, 9:00 AM – 6:00 PM IST</p>
           </div>
           <div className="contact-form-info-section">
             <h3>Sales & Partnerships</h3>
-            <p>📧 Email: <a href="mailto:sales@gts.ai">sales@gts.ai</a></p>
+            <p>📧 Email: <a href="mailto:genaitechsol@gmail.com">genaitechsol@gmail.com</a></p>
             <p>Let’s collaborate — we offer enterprise licensing, SaaS deployment, and custom integrations.</p>
           </div>
           <div className="contact-form-info-section">
             <h3>Request a Demo</h3>
-            <p>📧 Email: <a href="mailto:demo@gts.ai">demo@gts.ai</a></p>
+            <p>📧 Email: <a href="mailto:genaitechsol@gmail.com">genaitechsol@gmail.com</a></p>
             <p>📅 <a href="#book-demo">Book a Demo</a></p>
           </div>
           <div className="contact-form-info-section">
