@@ -21,11 +21,12 @@ const Home = ({ onTryDemo, showChatbot }) => {
           with intelligent, secure, and customizable tools designed to deliver
           accurate, real-time insights from your data—on your terms.
         </p>
-        {!showChatbot && (
-          <button className="glow-button fade-up delay-3" onClick={onTryDemo}>
-            Try the Demo →
-          </button>
-        )}
+        <button
+          className={`glow-button fade-up delay-3 ${showChatbot ? "hidden-but-reserved" : ""}`}
+          onClick={onTryDemo}
+        >
+        Try the Demo →
+        </button>
       </div>
     </section>
   );

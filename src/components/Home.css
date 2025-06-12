@@ -14,6 +14,11 @@
   animation: heroGradient 10s ease-in-out infinite;
 }
 
+.hidden-but-reserved {
+  visibility: hidden;
+}
+
+
 /* Blurred animated background blob */
 .blur-bg {
   position: absolute;
