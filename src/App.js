@@ -1,5 +1,5 @@
-// src/App.jsx
-import React from 'react';
+// App.js
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from "./components/Home";
@@ -15,6 +15,8 @@ import Footer from './components/Footer';
 import { Chatbot } from 'rag-chatbot-ui-gptbots';
 
 function App() {
+  const [showChatbot, setShowChatbot] = useState(false);
+
   return (
     <Router>
       <Header />
@@ -23,20 +25,20 @@ function App() {
           path="/"
           element={
             <>
-            <Home />
-            <FeaturesSection />
-            <HowItWorksSection />
-            <UseCasesSection />
-            <TestimonialSection />
-            <PricingSection />
-            <FAQSection />
-            <ContactForm />
+              <Home onTryDemo={() => setShowChatbot(true)} showChatbot={showChatbot} />
+              <FeaturesSection />
+              <HowItWorksSection />
+              <UseCasesSection />
+              <TestimonialSection />
+              <PricingSection />
+              <FAQSection />
+              <ContactForm />
             </>
           }
         />
       </Routes>
-       <Chatbot />
-       <Footer  />
+      {showChatbot && <Chatbot />}
+      <Footer />
     </Router>
   );
 }

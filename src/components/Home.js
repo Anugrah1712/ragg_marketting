@@ -1,7 +1,8 @@
+// Home.js
 import React from "react";
 import "./Home.css";
 
-const Home = () => {
+const Home = ({ onTryDemo, showChatbot }) => {
   return (
     <section id="hero" className="hero-container">
       <div className="blur-bg"></div>
@@ -20,11 +21,15 @@ const Home = () => {
           with intelligent, secure, and customizable tools designed to deliver
           accurate, real-time insights from your data—on your terms.
         </p>
-        {/* Optional: Add a glowing call-to-action button here */}
-        <button className="glow-button fade-up delay-3">Try the Demo →</button>
+        {!showChatbot && (
+          <button className="glow-button fade-up delay-3" onClick={onTryDemo}>
+            Try the Demo →
+          </button>
+        )}
       </div>
     </section>
   );
 };
 
 export default Home;
+
