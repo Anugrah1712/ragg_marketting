@@ -70,7 +70,9 @@ const Footer = () => {
           <div className="footer-social">
             <h4>Follow Us</h4>
             <p>
-              <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
+              <a href="https://www.linkedin.com/company/genaitechsol" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+              </a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
             </p>
           </div>
         </div>
