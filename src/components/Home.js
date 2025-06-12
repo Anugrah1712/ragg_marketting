@@ -10,7 +10,7 @@ const Home = ({ onTryDemo, showChatbot }) => {
       <div className="hero-content">
         <h1 className="gts-title fade-up delay-1">GTS</h1>
         <h2 className="gts-subheading fade-up delay-2">
-          Welcome to GTS – Pioneers in AI Innovation
+          AI THAT SPEAKS YOUR BUSINESS
         </h2>
         <p className="gts-description fade-up delay-2">
           At GTS, we develop cutting-edge AI solutions that transform the way
