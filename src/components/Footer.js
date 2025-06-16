@@ -50,11 +50,11 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>Contact Us</h4>
           <p>Email: <a href="mailto:genaitechsol@gmail.com">genaitechsol@gmail.com</a></p>
-          <p>Phone: +91 7984885953</p>
+          <p>Phone: +91 8275287490</p>
           <p>
-            123 Innovation Park,<br />
-            Hinjewadi Phase II,<br />
-            Pune – 411057, India
+            Lucerne 403, Gulmohar Renaissance, Near Agarwal Business Hub,<br />
+            Wagholi, Pune, Maharashtra – 412207<br />
+            India
           </p>
         </div>
 
@@ -72,7 +72,8 @@ const Footer = () => {
             <p>
               <a href="https://www.linkedin.com/company/genaitechsol" target="_blank" rel="noopener noreferrer">
               LinkedIn
-              </a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
+              </a> | <a href="https://twitter.com/YOUR_HANDLE" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+              <a href="https://github.com/YOUR_ORG" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>

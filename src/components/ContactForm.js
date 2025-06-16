@@ -51,7 +51,7 @@ function ContactForm() {
           <div className="contact-form-info-section">
             <h3>General Inquiries & Support</h3>
             <p>📧 Email: <a href="mailto:genaitechsol@gmail.com">genaitechsol@gmail.com</a></p>
-            <p>📞 Phone: +91 7984885953</p>
+            <p>📞 Phone: +91 8275287490</p>
             <p>🕘 Hours: Monday to Friday, 9:00 AM – 6:00 PM IST</p>
           </div>
           <div className="contact-form-info-section">
