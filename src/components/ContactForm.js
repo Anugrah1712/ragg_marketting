@@ -52,7 +52,7 @@ function ContactForm() {
             <h3>General Inquiries & Support</h3>
             <p>📧 Email: <a href="mailto:support@genaitechsol.com">support@genaitechsol.com</a></p>
             <p>📞 Phone: +91 8275287490</p>
-            <p>🕘 Hours: Monday to Friday, 9:00 AM – 6:00 PM IST</p>
+            <p>🕘 Hours: All Days, 8:00 AM – 10:00 PM IST</p>
           </div>
           <div className="contact-form-info-section">
             <h3>Sales & Partnerships</h3>
