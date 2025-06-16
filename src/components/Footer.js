@@ -49,7 +49,7 @@ const Footer = () => {
         {/* Column 3: Contact */}
         <div className="footer-contact">
           <h4>Contact Us</h4>
-          <p>Email: <a href="mailto:genaitechsol@gmail.com">genaitechsol@gmail.com</a></p>
+          <p>Email: <a href="mailto:contact@genaitechsol.com">contact@genaitechsol.com</a></p>
           <p>Phone: +91 8275287490</p>
           <p>
             Lucerne 403, Gulmohar Renaissance, Near Agarwal Business Hub,<br />
