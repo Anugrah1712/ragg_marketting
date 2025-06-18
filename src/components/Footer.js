@@ -72,7 +72,7 @@ const Footer = () => {
             <p>
               <a href="https://www.linkedin.com/company/genaitechsol" target="_blank" rel="noopener noreferrer">
               LinkedIn
-              </a> | <a href="https://twitter.com/YOUR_HANDLE" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+              </a> | <a href="https://twitter.com/@GenaiTechSol" target="_blank" rel="noopener noreferrer">Twitter</a> | 
               <a href="https://github.com/YOUR_ORG" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
