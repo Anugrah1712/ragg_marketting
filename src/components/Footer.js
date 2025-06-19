@@ -61,11 +61,12 @@ const Footer = () => {
         {/* Column 4: Legal & Social */}
         <div className="footer-legal">
           <h4>Legal</h4>
-          <ul>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/security">Security & Compliance</a></li>
-          </ul>
+         <ul>
+          <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Privacy Policy</button></li>
+          <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Terms of Service</button></li>
+          <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Security & Compliance</button></li>
+        </ul>
+
 
           <div className="footer-social">
             <h4>Follow Us</h4>
