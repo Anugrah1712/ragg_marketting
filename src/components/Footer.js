@@ -81,7 +81,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        © 2025 GTS Technologies Pvt. Ltd. All rights reserved.
+        © 2025 Genai Technology Solutions Pvt. Ltd. All rights reserved.
       </div>
     </footer>
   );
