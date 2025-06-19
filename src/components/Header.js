@@ -39,7 +39,9 @@ const Header = () => {
         <div className="header-content">
           <div className="logo" onClick={() => scrollToSection('hero')} style={{ cursor: 'pointer' }}>
             <img src={logo} alt="GTS logo" />
+            <span className="branding-text">Genai Technology Solutions</span>
           </div>
+
 
           {/* Hamburger Icon */}
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
