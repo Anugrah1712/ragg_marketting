@@ -45,12 +45,6 @@
   }
 }
 
-@media (max-width: 480px) {
-  .branding-text {
-    display: none;
-  }
-}
-
 /* Nav styling */
 .nav-links {
   list-style: none;
