@@ -1,8 +1,9 @@
 // App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { Analytics } from "@vercel/analytics/react"
 import Home from "./components/Home";
+
 import FeaturesSection from './components/FeaturesSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import UseCasesSection from './components/UseCasesSection';
@@ -37,6 +38,7 @@ function App() {
           }
         />
       </Routes>
+      <Analytics/>
       {showChatbot && <Chatbot />}
       <Footer />
     </Router>
