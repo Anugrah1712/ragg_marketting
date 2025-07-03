@@ -62,7 +62,7 @@ function ContactForm() {
           <div className="contact-form-info-section">
             <h3>Request a Demo</h3>
             <p>📧 Email: <a href="mailto:demo@genaitechsol.com">demo@genaitechsol.com</a></p>
-            <p>📅 <a href="#book-demo">Book a Demo</a></p>
+            <p>📅 <a href="/book-demo" className="book-demo-btn">Book a Demo</a></p>
           </div>
           <div className="contact-form-info-section">
             <h3>Office Address</h3>

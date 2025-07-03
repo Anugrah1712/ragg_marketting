@@ -1,9 +1,8 @@
 // App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import Home from "./components/Home";
-
 import FeaturesSection from './components/FeaturesSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import UseCasesSection from './components/UseCasesSection';
@@ -14,6 +13,7 @@ import ContactForm from './components/ContactForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Chatbot } from 'rag-chatbot-ui-gptbots';
+import BookDemo from './components/BookDemo'; // Make sure it's placed in /components
 
 function App() {
   const [showChatbot, setShowChatbot] = useState(false);
@@ -37,8 +37,9 @@ function App() {
             </>
           }
         />
+        <Route path="/book-demo" element={<BookDemo />} />
       </Routes>
-      <Analytics/>
+      <Analytics />
       {showChatbot && <Chatbot />}
       <Footer />
     </Router>
