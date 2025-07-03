@@ -1,19 +1,29 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Footer.css";
 import logo from "../assets/logo.png";
 
 const Footer = () => {
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const headerOffset = document.querySelector('.header')?.offsetHeight || 0;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerOffset;
+  const location = useLocation();
+  const navigate = useNavigate();
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+  const scrollToSection = (id) => {
+    if (location.pathname !== "/") {
+      // Navigate to home with hash so it scrolls there
+      navigate(`/#${id}`);
+    } else {
+      // Already on home, scroll smoothly
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = document.querySelector('.header')?.offsetHeight || 0;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 
@@ -35,14 +45,12 @@ const Footer = () => {
           <ul>
             <li><button className="footer-link-btn" onClick={() => scrollToSection("hero")}>Home</button></li>
             <li><button className="footer-link-btn" onClick={() => scrollToSection("features")}>Features</button></li>
-            <li><button className="footer-link-btn" onClick={() => scrollToSection("how-it-works")}>How It Work</button></li>
+            <li><button className="footer-link-btn" onClick={() => scrollToSection("how-it-works")}>How It Works</button></li>
             <li><button className="footer-link-btn" onClick={() => scrollToSection("use-case")}>Use Case</button></li>
             <li><button className="footer-link-btn" onClick={() => scrollToSection("testimonials")}>Testimonials</button></li>
             <li><button className="footer-link-btn" onClick={() => scrollToSection("pricing")}>Pricing</button></li>
-            <li><button className="footer-link-btn" onClick={() => scrollToSection("faq")}>faq</button></li>
+            <li><button className="footer-link-btn" onClick={() => scrollToSection("faq")}>FAQ</button></li>
             <li><button className="footer-link-btn" onClick={() => scrollToSection("contact")}>Contact</button></li>
-
-            <li><a href="/demo">Request a Demo</a></li> {/* Keep this if /demo is a separate route */}
           </ul>
         </div>
 
@@ -61,26 +69,23 @@ const Footer = () => {
         {/* Column 4: Legal & Social */}
         <div className="footer-legal">
           <h4>Legal</h4>
-         <ul>
-          <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Privacy Policy</button></li>
-          <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Terms of Service</button></li>
-          <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Security & Compliance</button></li>
-        </ul>
-
+          <ul>
+            <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Privacy Policy</button></li>
+            <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Terms of Service</button></li>
+            <li><button className="footer-link-btn" onClick={(e) => e.preventDefault()}>Security & Compliance</button></li>
+          </ul>
 
           <div className="footer-social">
             <h4>Follow Us</h4>
             <p>
-              <a href="https://www.linkedin.com/company/genaitechsol" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-              </a> | <a href="https://twitter.com/@GenaiTechSol" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+              <a href="https://www.linkedin.com/company/genaitechsol" target="_blank" rel="noopener noreferrer">LinkedIn</a> |{" "}
+              <a href="https://twitter.com/@GenaiTechSol" target="_blank" rel="noopener noreferrer">Twitter</a> |{" "}
               <a href="https://github.com/YOUR_ORG" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="footer-bottom">
         © 2025 Genai Technology Solutions Pvt. Ltd. All rights reserved.
       </div>

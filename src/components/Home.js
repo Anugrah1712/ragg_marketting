@@ -1,8 +1,25 @@
-// Home.js
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 
 const Home = ({ onTryDemo, showChatbot }) => {
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = document.querySelector(".header")?.offsetHeight || 0;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
+
   return (
     <section id="hero" className="hero-container">
       <div className="blur-bg"></div>
@@ -22,10 +39,12 @@ const Home = ({ onTryDemo, showChatbot }) => {
           accurate, real-time insights from your data—on your terms.
         </p>
         <button
-          className={`glow-button fade-up delay-3 ${showChatbot ? "hidden-but-reserved" : ""}`}
+          className={`glow-button fade-up delay-3 ${
+            showChatbot ? "hidden-but-reserved" : ""
+          }`}
           onClick={onTryDemo}
         >
-        Try the Demo →
+          Try the Demo →
         </button>
       </div>
     </section>
@@ -33,4 +52,3 @@ const Home = ({ onTryDemo, showChatbot }) => {
 };
 
 export default Home;
-
