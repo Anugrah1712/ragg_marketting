@@ -54,6 +54,11 @@
   padding: 0;
   margin: 0;
 }
+.close-icon {
+  font-size: 26px;
+  color: #00e5ff;
+  cursor: pointer;
+}
 
 .nav-link {
   width: 120px;

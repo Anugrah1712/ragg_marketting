@@ -72,12 +72,6 @@ function BookDemo() {
     <div className="book-demo-container">
       <h1 className="book-demo-title">Select a Date & Time</h1>
 
-      <div className="book-demo-profile">
-        <img src="/model.jpg" alt="Nishita Basu" className="book-demo-profile-img" />
-        <p className="book-demo-name">Nishita Basu</p>
-        <p className="book-demo-role">Senior account executive</p>
-      </div>
-
       <p className="book-demo-desc">
         Thank you for connecting with us. We are excited to talk to you! Please fill your details, select a date and time.
       </p>

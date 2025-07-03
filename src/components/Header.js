@@ -47,9 +47,15 @@ const Header = () => {
           </div>
 
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-            <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
-            <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
-            <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+            {menuOpen ? (
+              <div className="close-icon">✕</div>
+            ) : (
+              <>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </>
+            )}
           </div>
 
           <ul className={`nav-links ${menuOpen ? 'show' : ''}`}>
