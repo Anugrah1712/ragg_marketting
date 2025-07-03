@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { IoClose } from 'react-icons/io5'; // Added close icon
 import './Header.css';
 import logo from '../assets/logo.png';
 
@@ -48,13 +49,13 @@ const Header = () => {
 
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? (
-              <div className="close-icon">✕</div>
+              <IoClose size={28} color="#00e5ff" />
             ) : (
               <>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-            </>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+              </>
             )}
           </div>
 
@@ -71,7 +72,10 @@ const Header = () => {
               <li key={id}>
                 <button
                   className="nav-link"
-                  onClick={() => handleNavClick(id)}
+                  onClick={() => {
+                    handleNavClick(id);
+                    setMenuOpen(false); // Ensure menu closes
+                  }}
                 >
                   {label}
                 </button>

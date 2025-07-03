@@ -54,11 +54,6 @@
   padding: 0;
   margin: 0;
 }
-.close-icon {
-  font-size: 26px;
-  color: #00e5ff;
-  cursor: pointer;
-}
 
 .nav-link {
   width: 120px;
@@ -128,17 +123,6 @@
   background-color: #00e5ff;
   transition: 0.4s;
   border-radius: 2px;
-}
-
-/* Hamburger open state */
-.bar.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.bar.open:nth-child(2) {
-  opacity: 0;
-}
-.bar.open:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Responsive nav logic */
