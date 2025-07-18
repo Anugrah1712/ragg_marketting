@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +9,127 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000000; /* Black background */
-  color: #e0f7fa; /* Optional: light text color for contrast */
+  background-color: #000000;
+  color: #e0f7fa;
 }
+
+/* Hide scrollbar (cross-browser) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom gradient heading class */
+.heading-gradient {
+  background: linear-gradient(to right, #ffffff, #3b9effaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes icon-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-icon-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+
+.animate-icon-bounce {
+  animation: icon-bounce 2.5s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.6s ease-out both;
+}
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown 0.3s ease-out;
+}
+/* index.css or global CSS */
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header { border-bottom: 0 !important; }
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* fade‑in animation */
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+.fade-in-up{opacity:0;animation:fadeInUp 0.8s ease-out 0.2s forwards;}
+
+/* diagonal blob moves (same as Home) */
+@keyframes diagonalBlob{0%,100%{transform:translate(0,0)}50%{transform:translate(50vw,50vh)}}
+@keyframes diagonalBlobReverse{0%,100%{transform:translate(0,0)}50%{transform:translate(-40vw,-40vh)}}
+.animate-diagonal-move{animation:diagonalBlob 20s ease-in-out infinite;}
+.animate-diagonal-move-reverse{animation:diagonalBlobReverse 20s ease-in-out infinite;}
