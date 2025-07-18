@@ -1,37 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
     question: 'What types of documents does GTSBOT support?',
-    answer: 'GTSBOT supports PDF, DOCX, TXT files, and public web URLs...',
+    answer:
+      'GTSBOT supports PDF, DOCX, and TXT files, as well as public web URLs. It automatically processes and chunks the content for semantic retrieval and accurate responses.',
   },
   {
     question: 'Can GTSBOT be deployed on-premise?',
-    answer: 'Yes. GTSBOT is designed for secure, self-hosted deployment...',
+    answer:
+      'Yes. GTSBOT is fully containerized using Docker and can be deployed in secure, private environments, including air-gapped systems with no internet access.',
   },
   {
     question: 'Which large language models are supported?',
-    answer: 'GTSBOT supports GPT-4, Llama 3, Gemini 1.5 Flash...',
+    answer:
+      'GTSBOT supports GPT-4, Llama-3.3-70B-Instruct-Turbo, Meta-Llama-3.1-405B-Instruct-Turbo, scb10x-llama3-typhoon-v1-5-8b-instruct, and Gemini 1.5 Flash. Users can switch models dynamically through the Developer Console.',
   },
   {
     question: 'Does GTSBOT store or share our data with third parties?',
-    answer: 'No. All processing and storage happens within your environment...',
+    answer:
+      'No. All processing and storage happen locally within your environment. GTSBOT does not share any data externally unless explicitly configured by your organization.',
   },
   {
     question: 'Can we customize the assistant’s tone and behavior?',
-    answer: 'Absolutely. You can define custom prompts...',
+    answer:
+      'Absolutely. You can define custom prompts in the Developer Console to control tone, behavior, constraints, and domain-specific logic to suit your organization’s needs.',
   },
   {
     question: 'Does GTSBOT support voice-based interaction?',
-    answer: 'Yes. GTSBOT includes voice input and text-to-speech...',
+    answer:
+      'Yes. GTSBOT includes both voice input (speech-to-text) and text-to-speech output, enabling hands-free, conversational interaction.',
   },
 ];
-
-const answerVariants = {
-  collapsed: { opacity: 0, height: 0 },
-  open: { opacity: 1, height: "auto" },
-};
 
 export default function FAQSection() {
   const [open, setOpen] = useState(() => Array(faqs.length).fill(false));
@@ -71,7 +72,7 @@ export default function FAQSection() {
                     : "border-gray-800 bg-[#0a0a0a]"
                 }`}
               >
-                {/* Clickable header */}
+                {/* Header */}
                 <button
                   type="button"
                   onClick={() => toggle(i)}
@@ -93,23 +94,10 @@ export default function FAQSection() {
                   </span>
                 </button>
 
-                {/* Animated answer */}
+                {/* Answer */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
-                    <motion.div
-                      id={`faq-panel-${i}`}
-                      key="content"
-                      initial="collapsed"
-                      animate="open"
-                      exit="collapsed"
-                      variants={answerVariants}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="overflow-hidden px-8 pb-8"
-                    >
-                      <p className="text-gray-400 text-base leading-relaxed break-words">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
+                    <ExpandableAnswer answer={faq.answer} />
                   )}
                 </AnimatePresence>
               </div>
@@ -118,5 +106,32 @@ export default function FAQSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function ExpandableAnswer({ answer }) {
+  const ref = useRef(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (ref.current) {
+      setHeight(ref.current.scrollHeight);
+    }
+  }, []);
+
+  return (
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height, opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      style={{ overflow: "hidden" }}
+    >
+      <div ref={ref} className="px-8 pb-8">
+        <p className="text-gray-400 text-base leading-relaxed break-words">
+          {answer}
+        </p>
+      </div>
+    </motion.div>
   );
 }

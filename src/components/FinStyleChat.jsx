@@ -10,6 +10,7 @@ const FinStyleChat = () => {
   const hasStarted = useRef(false);
   const chatRef = useRef(null);
   const [inputValue, setInputValue] = useState("");
+  
 
   useEffect(() => {
   const sequence = [
