@@ -91,8 +91,8 @@ const Home = () => {
       }}
       className="relative z-10 flex items-center justify-center w-40 px-6 py-[14px] font-medium text-[#c2c2c2] hover:text-[#a8cbff] transition"
     >
-      <span className="text-[#c2c2c2]">our</span>
-      <span className="text-[#7ab8ff]">&nbsp;services</span>
+      <span className="text-[#c2c2c2]">Our</span>
+      <span className="text-[#7ab8ff]">&nbsp;Services</span>
     </button>
     <button
       onMouseEnter={() => setActive("contact")}
@@ -102,7 +102,7 @@ const Home = () => {
       }}
       className="relative z-10 flex items-center justify-center w-40 gap-2 px-6 py-[14px] font-medium text-[#c2c2c2] hover:text-[#a8cbff] transition"
     >
-      contact&nbsp;us <span>→</span>
+      Contact&nbsp;Us <span>→</span>
     </button>
     <span
       className={`absolute -bottom-1 h-2 w-2 rounded-full bg-[#7ab8ff] transition-all duration-300 ease-out ${

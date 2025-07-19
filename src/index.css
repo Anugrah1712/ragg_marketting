@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* ✅ prevent horizontal scroll */
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,20 +25,13 @@ body {
   background-color: #000000;
   color: #e0f7fa;
 }
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+
+/* Optional: Only if needed */
+header {
+  border-bottom: 0 !important;
 }
 
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-}
-
-/* Hide scrollbar (cross-browser) */
+/* ========== Scrollbar Hide ========== */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -36,14 +40,27 @@ body {
   scrollbar-width: none;
 }
 
-/* Custom gradient heading class */
+/* ========== Gradient Text ========== */
 .heading-gradient {
   background: linear-gradient(to right, #ffffff, #3b9effaa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* ========== Marquee Animation ========== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
 
+/* ========== Icon Animations ========== */
 @keyframes icon-float {
   0%, 100% {
     transform: translateY(0px);
@@ -52,7 +69,6 @@ body {
     transform: translateY(-6px);
   }
 }
-
 @keyframes icon-bounce {
   0%, 100% {
     transform: translateY(0px);
@@ -61,7 +77,14 @@ body {
     transform: translateY(-10px);
   }
 }
+.animate-icon-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+.animate-icon-bounce {
+  animation: icon-bounce 2.5s ease-in-out infinite;
+}
 
+/* ========== Fade/Slide Animations ========== */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -71,6 +94,9 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
 }
 
 @keyframes slide-in {
@@ -83,22 +109,11 @@ body {
     transform: translateX(0);
   }
 }
-
-.animate-icon-float {
-  animation: icon-float 3s ease-in-out infinite;
-}
-
-.animate-icon-bounce {
-  animation: icon-bounce 2.5s ease-in-out infinite;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out both;
-}
-
 .animate-slide-in {
   animation: slide-in 0.6s ease-out both;
 }
+
+/* ========== Dropdown Animation ========== */
 @keyframes dropdown {
   0% {
     opacity: 0;
@@ -109,41 +124,46 @@ body {
     transform: translateY(0) scale(1);
   }
 }
-
 .animate-dropdown {
   animation: dropdown 0.3s ease-out;
 }
-/* index.css or global CSS */
-body {
-  margin: 0;
-  padding: 0;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-header { border-bottom: 0 !important; }
-
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
+/* ========== Fade In Up Animation ========== */
 @keyframes fadeInUp {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
 
-/* fade‑in animation */
-@keyframes fadeInUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
-.fade-in-up{opacity:0;animation:fadeInUp 0.8s ease-out 0.2s forwards;}
-
-/* diagonal blob moves (same as Home) */
-@keyframes diagonalBlob{0%,100%{transform:translate(0,0)}50%{transform:translate(50vw,50vh)}}
-@keyframes diagonalBlobReverse{0%,100%{transform:translate(0,0)}50%{transform:translate(-40vw,-40vh)}}
-.animate-diagonal-move{animation:diagonalBlob 20s ease-in-out infinite;}
-.animate-diagonal-move-reverse{animation:diagonalBlobReverse 20s ease-in-out infinite;}
+/* ========== Diagonal Blob Animations ========== */
+@keyframes diagonalBlob {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50vw, 50vh);
+  }
+}
+@keyframes diagonalBlobReverse {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40vw, -40vh);
+  }
+}
+.animate-diagonal-move {
+  animation: diagonalBlob 20s ease-in-out infinite;
+}
+.animate-diagonal-move-reverse {
+  animation: diagonalBlobReverse 20s ease-in-out infinite;
+}
