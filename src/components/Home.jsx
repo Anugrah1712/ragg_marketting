@@ -182,7 +182,7 @@ const Home = () => {
 
           <div className="z-10 max-w-5xl">
             <h2 className="text-[2.6rem] md:text-[4rem] font-semibold leading-snug text-white">
-              We're <span className="text-[#c2e9fb]">GenAi Technology Solutions</span>. We
+              We're <span className="text-[#c2e9fb]">GenAI Technology Solutions</span>. We
               develop custom <span className="text-[#c2e9fb]">AI</span> solutions for{" "}
               <span className="text-[#c2e9fb]">innovative companies</span>.
             </h2>

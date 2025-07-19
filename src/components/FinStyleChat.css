@@ -1,15 +1,4 @@
 /* FULLSCREEN BACKGROUND GIF */
-/* .chat-widget-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: url('/background.gif') no-repeat center center fixed;
-  background-size: cover;
-  z-index: -1;
-} */
-
 .chat-widget-container {
   position: relative;
   display: flex;

@@ -91,19 +91,21 @@ const FinStyleChat = () => {
 
 
   return (
-    <div>
-      <div className="chat-widget-background"
+  <div className="chat-widget-container" ref={chatRef}>
+    {/* Background is now inside and relative to this page only */}
+    <div
+      className="chat-background-inside"
       style={{
-    background: "url('/background.gif') no-repeat center center fixed",
-    backgroundSize: "cover",
-    position: "fixed",
-    top: 0,
-    left: 0,
-    height: "100vh",
-    width: "100vw",
-    zIndex: -1,
-  }}
-      />
+        background: "url('/background.gif') no-repeat center center fixed",
+        backgroundSize: "cover",
+        position: "absolute",  // 🔁 changed from fixed
+        top: 0,
+        left: 0,
+        height: "100%",
+        width: "100%",
+        zIndex: -1,
+      }}
+    />
       <div className="chat-widget-container" ref={chatRef}>
         <div className="chat-box">
           <div className="chat-header-letsgo">
