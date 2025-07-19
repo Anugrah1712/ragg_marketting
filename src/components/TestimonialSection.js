@@ -39,12 +39,17 @@ const scrollingTestimonials = [...testimonials, ...testimonials];
 
 export default function TestimonialSection() {
   return (
-    <section id="reviews" className="bg-black text-white min-h-screen flex flex-col justify-center px-6 md:px-20 overflow-hidden">
+    <section
+      id="reviews"
+      className="bg-black text-white min-h-screen flex flex-col justify-center px-6 md:px-20 overflow-hidden"
+    >
       <h1 className="text-6xl font-bold text-center mb-16 leading-tight heading-gradient">Reviews</h1>
 
-      {/* Make this container scrollable on x-axis manually + animate */}
-      <div className="relative w-full overflow-x-auto">
-        <div className="flex w-max animate-scroll gap-6 px-1">
+      {/* Scrollable container */}
+      <div className="relative w-full overflow-x-auto scroll-smooth no-scrollbar">
+        <div
+          className="flex w-max animate-marquee gap-6 px-1 hover:[animation-play-state:paused]"
+        >
           {scrollingTestimonials.map((t, i) => (
             <div
               key={i}
@@ -71,8 +76,9 @@ export default function TestimonialSection() {
         </div>
       </div>
 
+      {/* Inline animation styles */}
       <style jsx>{`
-        @keyframes scroll {
+        @keyframes marquee {
           0% {
             transform: translateX(0%);
           }
@@ -81,14 +87,17 @@ export default function TestimonialSection() {
           }
         }
 
-        .animate-scroll {
-          animation: scroll 80s linear infinite;
+        .animate-marquee {
+          animation: marquee 60s linear infinite;
+        }
+          
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
         }
 
-        @media (hover: none) and (pointer: coarse) {
-          .animate-scroll {
-            animation: none !important; /* disable auto-scroll on touch devices */
-          }
+        .no-scrollbar {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
         }
       `}</style>
     </section>

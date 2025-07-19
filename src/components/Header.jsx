@@ -82,7 +82,7 @@ export default function Header() {
     <>
       {drawer && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm lg:hidden"
           onClick={() => setDrawer(false)}
         />
       )}
@@ -97,7 +97,7 @@ export default function Header() {
             className="pointer-events-auto absolute left-6 top-1/2 flex -translate-y-1/2 items-center gap-2 outline-none"
           >
             <img src={logo} alt="logo" className="h-10 w-10" />
-            <span className="text-2xl font-bold heading-gradient tracking-tight leading-tight">
+            <span className="text-xl sm:text-2xl font-bold heading-gradient tracking-tight leading-tight">
               GenAI&nbsp;Technology&nbsp;Solutions
             </span>
           </button>
@@ -147,7 +147,7 @@ export default function Header() {
 
       {/* mobile drawer */}
       <nav
-        className={`fixed inset-y-0 right-0 z-50 w-4/5 max-w-xs transform
+        className={`fixed inset-y-0 right-0 z-[1000] w-4/5 max-w-xs transform
           bg-[#0f0f0f] p-8 transition-transform duration-300 lg:hidden
           ${drawer ? 'translate-x-0' : 'translate-x-full'}`}
       >
