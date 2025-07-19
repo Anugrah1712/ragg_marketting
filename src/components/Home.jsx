@@ -57,7 +57,7 @@ const Home = () => {
             <img
               src="/logo.png"
               alt="GTS Logo"
-              className="mx-auto mb-6 w-28 h-28 sm:w-32 sm:h-32 object-contain"
+              className="mx-auto mt-6 sm:mt-0 mb-6 w-28 h-28 sm:w-32 sm:h-32 object-contain"
             />
 
             <h1 className="text-7xl font-bold mb-16 leading-tight heading-gradient">

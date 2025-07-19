@@ -88,19 +88,19 @@ export default function Header() {
       )}
 
       {/* -- HEADER WRAPPER -- */}
-      <header className="pointer-events-none fixed inset-x-0 top-4 z-50">
-        {/* brand block (logo + gradient text) | only before scroll */}
-        {!shrink && (
-          <button
-            onClick={goHome}
-            className="pointer-events-auto absolute left-6 top-1/2 flex -translate-y-1/2 items-center gap-2 outline-none"
-          >
-            <img src={logo} alt="logo" className="h-10 w-10" />
-            <span className="text-2xl font-bold heading-gradient tracking-tight leading-tight">
-              GenAI&nbsp;Technology&nbsp;Solutions
-            </span>
-          </button>
-        )}
+      <header className="pointer-events-none fixed inset-x-0 top-4 z-50 px-4">
+      <div className="pointer-events-auto flex items-center justify-between">
+      {!shrink && (
+        <button
+          onClick={goHome}
+          className="flex items-center gap-2 outline-none"
+        >
+          <img src={logo} alt="logo" className="h-10 w-10" />
+          <span className="text-xl sm:text-2xl font-bold heading-gradient tracking-tight leading-tight whitespace-nowrap">
+            GenAI&nbsp;Technology&nbsp;Solutions
+          </span>
+        </button>
+      )}
 
         {/* pill nav bar */}
         <div className="hidden lg:flex justify-center">
@@ -132,16 +132,17 @@ export default function Header() {
         </div>
 
         {/* hamburger icon */}
-        <button
-          onClick={() => setDrawer(!drawer)}
-          className="pointer-events-auto absolute right-6 top-1/2 -translate-y-1/2 lg:hidden"
-        >
-          {drawer ? (
-            <IoClose size={40} className="text-[#9ad5ff]" />
-          ) : (
-            <HiOutlineMenuAlt4 size={36} className="text-[#9ad5ff]" />
-          )}
-        </button>
+      <button
+        onClick={() => setDrawer(!drawer)}
+        className="lg:hidden"
+      >
+        {drawer ? (
+          <IoClose size={40} className="text-[#9ad5ff]" />
+        ) : (
+          <HiOutlineMenuAlt4 size={36} className="text-[#9ad5ff]" />
+        )}
+      </button>
+    </div>
       </header>
 
       {/* mobile drawer */}
