@@ -3,6 +3,8 @@ import { IoClose } from 'react-icons/io5';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
 import logo from '../assets/logo.png';
 import { useLocation } from 'react-router-dom';
+import { HiMenu } from 'react-icons/hi'; // Add this import
+
 
 const NAV = [
   { id: 'services', label: 'services' },
@@ -96,7 +98,7 @@ export default function Header() {
             onClick={goHome}
             className="pointer-events-auto absolute left-6 top-1/2 flex -translate-y-1/2 items-center gap-2 outline-none"
           >
-            <img src={logo} alt="logo" className="h-10 w-10" />
+            <img src={logo} alt="logo" className="h-8 w-8 object-contain max-w-[40px]" />
             <span className="text-xl sm:text-2xl font-bold heading-gradient tracking-tight leading-tight">
               GenAI&nbsp;Technology&nbsp;Solutions
             </span>
@@ -114,7 +116,7 @@ export default function Header() {
             {/* logo inside pill after scroll */}
             {shrink && (
               <button onClick={goHome} className="shrink-0 outline-none">
-                <img src={logo} alt="logo" className="h-8 w-8" />
+                <img src={logo} alt="logo" className="h-8 w-8 object-contain max-w-[32px]" />
               </button>
             )}
 
@@ -140,7 +142,7 @@ export default function Header() {
           {drawer ? (
             <IoClose size={40} className="text-[#9ad5ff]" />
           ) : (
-            <HiOutlineMenuAlt4 size={36} className="text-[#9ad5ff]" />
+            <HiMenu size={36} className="text-[#9ad5ff]" /> 
           )}
         </button>
       </header>

@@ -18,7 +18,7 @@ const steps = [
   },
   {
     number: '03',
-    title: 'Maintain & improve',
+    title: 'Maintain & Improve',
     description:
       'After deployment, our team will keep working hard by providing support and continuously improving the implemented solutions.',
     icon: <FaWrench className="text-6xl text-blue-500 animate-icon-float delay-200" />,
