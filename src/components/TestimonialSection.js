@@ -39,54 +39,58 @@ const scrollingTestimonials = [...testimonials, ...testimonials];
 
 export default function TestimonialSection() {
   return (
-    <section id= 'reviews'
-    className="bg-black text-white min-h-screen flex flex-col justify-center px-6 md:px-20 overflow-hidden">
-      <h1 className="text-6xl font-bold text-center mb-16 leading-tight heading-gradient">
-  Reviews
-</h1>
-<div className="relative w-full overflow-hidden">
-  <div className="flex w-max animate-scroll gap-6">
-    {scrollingTestimonials.map((t, i) => (
-      <div
-        key={i}
-        className="w-[90vw] max-w-[370px] bg-[#0b0e14] rounded-2xl p-6 border border-gray-800 shadow-[0_0_40px_#60a5fa20] hover:shadow-[0_0_60px_#60a5fa60] transition duration-300 flex-shrink-0"
-      >
-        <p className="italic text-xl mb-4 leading-relaxed text-white">"{t.quote}"</p>
+    <section id="reviews" className="bg-black text-white min-h-screen flex flex-col justify-center px-6 md:px-20 overflow-hidden">
+      <h1 className="text-6xl font-bold text-center mb-16 leading-tight heading-gradient">Reviews</h1>
 
-        <div className="flex items-center gap-4 mb-3">
-          <img
-            src={t.image}
-            alt="Reviewer"
-            className="w-14 h-14 rounded-full object-cover border border-gray-700"
-          />
-          <div>
-            <p className="text-blue-400 font-semibold text-base">{t.author}</p>
-            <div className="text-yellow-400 text-lg">
-              {'★'.repeat(t.stars)}{'☆'.repeat(5 - t.stars)}
+      {/* Make this container scrollable on x-axis manually + animate */}
+      <div className="relative w-full overflow-x-auto">
+        <div className="flex w-max animate-scroll gap-6 px-1">
+          {scrollingTestimonials.map((t, i) => (
+            <div
+              key={i}
+              className="w-[90vw] max-w-[370px] bg-[#0b0e14] rounded-2xl p-6 border border-gray-800 shadow-[0_0_40px_#60a5fa20] hover:shadow-[0_0_60px_#60a5fa60] transition duration-300 flex-shrink-0"
+            >
+              <p className="italic text-xl mb-4 leading-relaxed text-white">"{t.quote}"</p>
+              <div className="flex items-center gap-4 mb-3">
+                <img
+                  src={t.image}
+                  alt="Reviewer"
+                  className="w-14 h-14 rounded-full object-cover border border-gray-700"
+                />
+                <div>
+                  <p className="text-blue-400 font-semibold text-base">{t.author}</p>
+                  <div className="text-yellow-400 text-lg">
+                    {'★'.repeat(Math.floor(t.stars))}
+                    {'☆'.repeat(5 - Math.floor(t.stars))}
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-400 text-base leading-snug">{t.detail}</p>
             </div>
-          </div>
+          ))}
         </div>
-
-        <p className="text-gray-400 text-base leading-snug">{t.detail}</p>
       </div>
-    ))}
-  </div>
-</div>
 
-<style jsx>{`
-  @keyframes scroll {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
 
-  .animate-scroll {
-    animation: scroll 80s linear infinite; /* slowed down */
-  }
-`}</style>
+        .animate-scroll {
+          animation: scroll 80s linear infinite;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+          .animate-scroll {
+            animation: none !important; /* disable auto-scroll on touch devices */
+          }
+        }
+      `}</style>
     </section>
   );
 }
