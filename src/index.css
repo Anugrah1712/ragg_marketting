@@ -14,7 +14,18 @@ body {
   background-color: #000000;
   color: #e0f7fa;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
 
 /* Hide scrollbar (cross-browser) */
 .no-scrollbar::-webkit-scrollbar {
