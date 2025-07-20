@@ -133,8 +133,8 @@ const PricingSection = () => {
 
       <p className="text-center text-gray-400 text-sm mt-12">
         📩 Contact us at{' '}
-        <a href="mailto:genaitechsol@gmail.com" className="text-blue-400 underline">
-          genaitechsol@gmail.com
+        <a href="mailto:contact@genaitechsol.com" className="text-blue-400 underline">
+          contact@genaitechsol.com
         </a>{' '}
         for custom quotes, demos, or government/educational discounts.
       </p>
