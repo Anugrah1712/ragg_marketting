@@ -20,15 +20,11 @@ const HRCaseStudy = () => {
   return (
     <>
       {/* ───────── FULLSCREEN HERO ───────── */}
-      <section className="relative min-h-[75vh] flex items-center justify-center bg-black text-white text-center px-4 overflow-hidden">
-        <img
-          src="/HR.png"
-          alt="HR Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        />
+      <section className="relative min-h-[40vh] flex items-center justify-center bg-black text-white text-center px-4 pt-24 sm:pt-28 overflow-hidden">
+        
 
         <div className="z-10 max-w-4xl">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6" style={headingGradientStyle}>
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 mt-4" style={headingGradientStyle}>
             Case Study: Transforming Recruitment Support at HireBridge India with GenAI Chatbot by GTS
           </h1>
         </div>
@@ -61,11 +57,7 @@ const HRCaseStudy = () => {
               HireBridge partnered with GenAI Technology Solutions (GTS) to build and deploy a Retrieval-Augmented Generation (RAG)-based chatbot, embedded directly into the company’s Application Tracking System.
             </p>
             <div className="mt-6">
-            <img
-              src="/hr-approach.png"
-              alt="Our Approach"
-              className="w-full rounded-xl border border-white/40"
-            />
+          
             <p className="mt-2 text-2sm text-center text-gray-400 italic">
               Design architecture
             </p>

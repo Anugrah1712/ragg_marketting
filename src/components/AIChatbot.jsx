@@ -26,6 +26,10 @@ export default function AIChatbot() {
     return () => window.removeEventListener("resize", measure);
   }, []);
 
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "auto" });
+}, []);
+
   /* carousel autoplay */
   useEffect(() => {
     const id = setInterval(() => {
@@ -40,12 +44,12 @@ export default function AIChatbot() {
   }, []);
 
   const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 
   /* content data */
   const sections = [
@@ -134,23 +138,22 @@ export default function AIChatbot() {
       {sections.map(({ id, hero, title, paragraphs }) => {
         const heroSize =
           hero === "GTSCANVAS"
-            ? "text-[8rem] sm:text-[10rem] md:text-[18rem]"
-            : "text-[10rem] sm:text-[12rem] md:text-[26rem]";
+            ? "text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[16rem]"
+            : "text-[5rem] sm:text-[8rem] md:text-[14rem] lg:text-[22rem]";
 
         return (
           <section
-          
             key={id}
             id={id}
-            className="relative min-h-[90vh] flex items-center justify-center py-20 px-4 sm:py-24 sm:px-6 overflow-hidden bg-black"
+            className="relative py-24 lg:py-32 px-4 sm:px-6 overflow-hidden bg-black"
           >
             <h1
-              className={`absolute top-[30%] ${heroSize} font-bold text-[#3b9eff35] select-none leading-none blur-sm`}
+              className={`absolute inset-0 flex items-center justify-center ${heroSize} font-bold text-[#3b9eff35] select-none leading-none blur-sm`}
             >
               {hero}
             </h1>
 
-            <div className="relative z-10 max-w-4xl text-center space-y-6 fade-in-up">
+            <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 fade-in-up">
               <h2 className="heading-gradient text-3xl sm:text-4xl md:text-6xl font-extrabold">
                 {hero} <span className="text-white/90">— {title}</span>
               </h2>

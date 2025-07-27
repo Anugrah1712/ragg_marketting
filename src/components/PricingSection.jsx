@@ -46,13 +46,15 @@ const PricingSection = () => {
   const [selectedPlan, setSelectedPlan] = useState('Professional'); // Default selected
 
   return (
-    <section id= 'pricing'
-    className="bg-black text-white py-16 px-4 sm:px-8">
-      <div className="text-center mb-12">
-        <h2 className="text-7xl font-bold heading-gradient">Subscriptions</h2>
-        <p className="text-gray-400 mt-3">
-          Three different subscriptions to match your companies' needs.
-        </p>
+    <section id="pricing" className="bg-black text-white py-16 px-4 sm:px-8 scroll-mt-28 sm:scroll-mt-40">
+
+      <div className="text-center mb-12 overflow-visible w-full">
+  <h2 className="text-6xl font-bold heading-gradient inline-block whitespace-nowrap px-2">
+    Subscriptions
+  </h2>
+  <p className="text-gray-400 mt-3">
+    Three different subscriptions to match your companies' needs.
+  </p>
 
         <div className="inline-flex mt-6 bg-[#101010] border border-gray-700 rounded-full p-1">
           <button
@@ -80,7 +82,9 @@ const PricingSection = () => {
           const isEnterprise = plan.name === 'Enterprise';
           const displayPrice = isEnterprise
             ? 'Custom Pricing'
-            : `$${isMonthly ? plan.price : (plan.price * 12 * 0.8 / 12).toFixed(0)}`;
+            : isMonthly 
+            ? `$${plan.price}` 
+            : `$${(plan.price * 12 * 0.8).toFixed(0)}`;
 
           return (
             <div
@@ -99,10 +103,12 @@ const PricingSection = () => {
 
               <h3 className="text-xl text-blue-400 font-medium">{plan.name}</h3>
               <p className="text-3xl font-bold mt-2 text-white">
-                {displayPrice}
-                {!isEnterprise && (
-                  <span className="text-sm font-normal text-gray-400"> /month</span>
-                )}
+              {isEnterprise ? 'Custom Pricing' : `$${isMonthly ? plan.price : (plan.price * 12 * 0.8).toFixed(0)}`}
+              {!isEnterprise && (
+                <span className="text-sm font-normal text-gray-400">
+                  {isMonthly ? ' /month' : ' /per annum'}
+                </span>
+              )}
               </p>
               <p className="text-sm text-gray-400 mt-4 mb-6">{plan.description}</p>
 

@@ -1,26 +1,41 @@
 import { useEffect, useRef, useState } from 'react';
 import { IoClose } from 'react-icons/io5';
-import { HiOutlineMenuAlt4 } from 'react-icons/hi';
+import { HiMenu } from 'react-icons/hi';
 import logo from '../assets/logo.png';
-import { useLocation } from 'react-router-dom';
-import { HiMenu } from 'react-icons/hi'; // Add this import
-
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const NAV = [
   { id: 'services', label: 'services' },
-  { id: 'process',  label: 'process'  },
-  { id: 'reviews',  label: 'reviews'  },
-  { id: 'contact',  label: 'contact'  },
+  { id: 'process', label: 'process' },
+  { id: 'reviews', label: 'reviews' },
+  { id: 'contact', label: 'contact' },
+];
+
+const PRODUCTS = [
+  {
+    label: 'GTSBOT',
+    subtext: 'Instant answers powered by your data',
+    description:
+      'A GTS-powered chatbot that retrieves from your documents, websites, and FAQs — ideal for customer support, education, legal, and more.',
+    route: '/aichatbot',
+  },
+  {
+    label: 'GTSCANVAS',
+    subtext: 'Auto-generate high-converting marketing banners',
+    description:
+      'Feed in your content, and let AI design eye‑catching visuals for web, social media, and ads — customized to your brand.',
+    route: '/banner',
+  },
 ];
 
 export default function Header() {
-  const [drawer, setDrawer]   = useState(false);
-  const [shrink, setShrink]   = useState(false);
-  const [active, setActive]   = useState('services');
-  const location              = useLocation();
-  const ioRef                 = useRef(null);
+  const [drawer, setDrawer] = useState(false);
+  const [shrink, setShrink] = useState(false);
+  const [active, setActive] = useState('services');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const ioRef = useRef(null);
 
-  /* ---- shrink pill after hero ---- */
   useEffect(() => {
     const onScroll = () => setShrink(window.scrollY > 80);
     onScroll();
@@ -28,10 +43,9 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* ---- observe sections to highlight active ---- */
   useEffect(() => {
     if (location.pathname !== '/') return;
-    const ids     = NAV.map(n => n.id);
+    const ids = NAV.map(n => n.id);
     const options = { rootMargin: '-30% 0px -60% 0px', threshold: 0 };
 
     ioRef.current = new IntersectionObserver(entries => {
@@ -48,7 +62,6 @@ export default function Header() {
     return () => ioRef.current?.disconnect();
   }, [location.pathname]);
 
-  /* ---- go to a specific section ---- */
   const go = id => {
     setActive(id);
     if (location.pathname !== '/') {
@@ -58,13 +71,12 @@ export default function Header() {
     const el = document.getElementById(id);
     if (el) {
       const head = document.querySelector('header')?.offsetHeight || 0;
-      const y    = el.getBoundingClientRect().top + window.scrollY - head;
+      const y = el.getBoundingClientRect().top + window.scrollY - head;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
     setDrawer(false);
   };
 
-  /* ---- goHome (logo click) ---- */
   const goHome = () => {
     if (location.pathname !== '/') {
       window.location.href = '/';
@@ -75,7 +87,11 @@ export default function Header() {
     setDrawer(false);
   };
 
-  /* ---- lock body when drawer open ---- */
+  const goToProduct = route => {
+    setDrawer(false);
+    navigate(route);
+  };
+
   useEffect(() => {
     document.body.classList.toggle('overflow-hidden', drawer);
   }, [drawer]);
@@ -89,10 +105,8 @@ export default function Header() {
         />
       )}
 
-      {/* -- HEADER WRAPPER -- */}
       <header className="pointer-events-none fixed inset-x-0 top-4 z-[999]">
-
-        {/* brand block (logo + gradient text) | only before scroll */}
+        {/* Brand logo before scroll */}
         {!shrink && (
           <button
             onClick={goHome}
@@ -105,36 +119,47 @@ export default function Header() {
           </button>
         )}
 
-        {/* pill nav bar */}
+        {/* Pill Nav Bar (desktop) */}
         <div className="hidden lg:flex justify-center">
-          <div
-            className={`pointer-events-auto flex items-center gap-6
+          <ul
+            className={`list-none pointer-events-auto flex items-center gap-6
               border border-[#ffffff1a] bg-black/70 backdrop-blur-md text-gray-300
               ${shrink ? 'px-8 py-3' : 'px-10 py-4'}
               rounded-[22px] transition-all duration-300`}
           >
-            {/* logo inside pill after scroll */}
             {shrink && (
-              <button onClick={goHome} className="shrink-0 outline-none">
-                <img src={logo} alt="logo" className="h-8 w-8 object-contain max-w-[32px]" />
-              </button>
+              <li>
+                <button onClick={goHome} className="shrink-0 outline-none">
+                  <img src={logo} alt="logo" className="h-8 w-8 object-contain max-w-[32px]" />
+                </button>
+              </li>
             )}
 
-            {/* nav items */}
             {NAV.map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => go(id)}
-                className={`text-base md:text-lg capitalize transition-colors duration-200 outline-none
-                  ${active === id ? 'text-[#9ad5ff]' : 'hover:text-white'}`}
-              >
-                {label}
-              </button>
+              <li key={id}>
+                <button
+                  onClick={() => go(id)}
+                  className="w-full text-left text-xl capitalize text-white hover:opacity-80 transition"
+                >
+                  {label}
+                </button>
+              </li>
             ))}
-          </div>
+
+            {PRODUCTS.map(({ label, route }) => (
+              <li key={label}>
+                <button
+                  onClick={() => goToProduct(route)}
+                  className="w-full text-left text-xl text-white hover:opacity-80 transition"
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* hamburger icon */}
+        {/* Hamburger icon */}
         <button
           onClick={() => setDrawer(!drawer)}
           className="pointer-events-auto absolute right-6 top-1/2 -translate-y-1/2 lg:hidden"
@@ -142,23 +167,22 @@ export default function Header() {
           {drawer ? (
             <IoClose size={40} className="text-[#9ad5ff]" />
           ) : (
-            <HiMenu size={36} className="text-[#9ad5ff]" /> 
+            <HiMenu size={36} className="text-[#9ad5ff]" />
           )}
         </button>
       </header>
 
-      {/* mobile drawer */}
+      {/* Mobile drawer */}
       <nav
         className={`fixed inset-y-0 right-0 z-[1000] w-4/5 max-w-xs transform
           bg-[#0f0f0f] p-8 transition-transform duration-300 lg:hidden
           ${drawer ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        {/* Close button inside drawer */}
-         <div className="flex justify-end mb-6">
+        <div className="flex justify-end mb-6">
           <button onClick={() => setDrawer(false)} className="text-[#9ad5ff]">
             <IoClose size={32} />
           </button>
-         </div>
+        </div>
         <ul className="flex flex-col space-y-8">
           {NAV.map(({ id, label }) => (
             <li key={id}>
@@ -166,6 +190,19 @@ export default function Header() {
                 onClick={() => go(id)}
                 className={`w-full text-left text-xl capitalize transition
                   ${active === id ? 'text-[#9ad5ff]' : 'text-gray-300'} hover:text-white`}
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+
+          <hr className="border-[#ffffff1a] my-4" />
+
+          {PRODUCTS.map(({ label, route }) => (
+            <li key={label}>
+              <button
+                onClick={() => goToProduct(route)}
+                className="w-full text-left text-xl text-[#9ad5ff] hover:text-white transition"
               >
                 {label}
               </button>

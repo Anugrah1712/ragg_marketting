@@ -27,23 +27,22 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process"    
-    className="bg-black text-white py-28 px-6 sm:px-12">
-      <h2 className="text-7xl font-bold text-center mb-24 heading-gradient">The Process</h2>
+    <section id="process" className="bg-black text-white min-h-screen flex flex-col justify-center px-6 md:px-20">
+      <h2 className="text-6xl font-bold text-center mb-16 heading-gradient">The Process</h2>
 
-      <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-8 max-w-[75%] mx-auto">
         {steps.map((step, index) => (
           <div
             key={index}
-            className="bg-[#0a0a0a] p-10 rounded-2xl border border-[#1c1c1c] shadow-[0_0_30px_rgba(0,0,0,0.35)] min-h-[500px] flex flex-col justify-start"
+            className="bg-[#0a0a0a] p-6 rounded-2xl border border-[#1c1c1c] shadow-[0_0_30px_rgba(0,0,0,0.35)] min-h-[400px] flex flex-col justify-start"
           >
             {/* Icon */}
-            <div className="mb-10 flex items-center justify-center h-48">
+            <div className="mb-8 flex items-center justify-center h-36">
               {step.icon}
             </div>
 
             {/* Heading */}
-            <h3 className="text-2xl font-bold mb-4 animate-slide-in">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 animate-slide-in">
               <span className="text-blue-400">{step.number}</span>{' '}
               <span className="text-white">{step.title}</span>
             </h3>

@@ -7,7 +7,7 @@ const Home = () => {
   const [active, setActive] = useState("contact");
   const nav = useNavigate();
   const location = useLocation();
-
+  const closeTimeoutRef = useRef(null);
   const pillWrapper = useRef(null);
   const dropdownWrapper = useRef(null);
   const [hasMounted, setHasMounted] = useState(false);
@@ -78,32 +78,42 @@ const Home = () => {
 <div className="relative z-[100] flex flex-col items-center mt-4">
   <div
     ref={pillWrapper}
-    onMouseLeave={() => setOpen(false)}
     className="relative inline-flex items-stretch bg-[#0d0d0d]/90 border border-[#272727] rounded-[22px] overflow-visible backdrop-blur"
   >
     <span
       className={`absolute top-0 h-full bg-[#151515] transition-all duration-300 ease-out rounded-[22px] ${pillClasses}`}
     />
+
+    {/* Our Services button — dropdown should only open from this */}
     <button
       onMouseEnter={() => {
-        setActive("services");
+        if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
         setOpen(true);
+        setActive("services");
+      }}
+      onMouseLeave={() => {
+        closeTimeoutRef.current = setTimeout(() => {
+          setOpen(false);
+        }, 150);
       }}
       className="relative z-10 flex items-center justify-center w-40 px-6 py-[14px] font-medium text-[#c2c2c2] hover:text-[#a8cbff] transition"
     >
       <span className="text-[#c2c2c2]">Our</span>
       <span className="text-[#7ab8ff]">&nbsp;Services</span>
     </button>
+
+    {/* Contact Us — no dropdown interaction here */}
     <button
-      onMouseEnter={() => setActive("contact")}
       onClick={() => {
         setOpen(false);
+        setActive("contact");
         document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
       }}
       className="relative z-10 flex items-center justify-center w-40 gap-2 px-6 py-[14px] font-medium text-[#c2c2c2] hover:text-[#a8cbff] transition"
     >
       Contact&nbsp;Us <span>→</span>
     </button>
+
     <span
       className={`absolute -bottom-1 h-2 w-2 rounded-full bg-[#7ab8ff] transition-all duration-300 ease-out ${
         active === "services" ? "left-1/4" : "left-3/4"
@@ -111,16 +121,24 @@ const Home = () => {
     />
   </div>
 
-  {/* Dropdown */}
+  {/* Dropdown should stay visible when hovered */}
   {hasMounted && open && (
     <div
       ref={dropdownWrapper}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => {
+        if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+        setOpen(true);
+      }}
+      onMouseLeave={() => {
+        closeTimeoutRef.current = setTimeout(() => {
+          setOpen(false);
+        }, 150);
+      }}
       className={`absolute top-full mt-2 w-full max-w-[95vw] sm:max-w-[480px] px-3 sm:px-4 py-4 border border-[#3c3c3c] bg-[#111111] shadow-xl z-[9999] rounded-xl transition-all duration-300 ease-in-out ${
         open ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"
       }`}
     >
+
       {/* dropdown items */}
       {[
         {
@@ -169,9 +187,10 @@ const Home = () => {
         <section className="relative z-0 min-h-[75vh] flex flex-col items-center justify-center bg-black/90 text-center px-4 overflow-hidden">
           <GalaxyBackground />
           <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/95 to-black/0 z-[1]" />
-          <h1 className="absolute top-[15%] text-[28rem] font-bold text-[#3b9eff35] z-0 select-none leading-none blur-sm">
+          <h1 className="absolute top-[15%] text-[12rem] sm:text-[20rem] md:text-[28rem] font-bold text-[#3b9eff35] z-0 select-none leading-none blur-sm whitespace-nowrap">
             GTS
           </h1>
+
 
           <div className="z-10 max-w-5xl">
             <h2 className="text-[2.6rem] md:text-[4rem] font-semibold leading-snug text-white">

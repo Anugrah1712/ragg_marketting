@@ -18,6 +18,22 @@ const cardVariants = {
     transition: { duration: 0.6, type: 'spring' },
   },
 };
+const PRODUCTS = [
+  {
+    label: 'GTSBOT',
+    subtext: 'Instant answers powered by your data',
+    description:
+      'A GTS-powered chatbot that retrieves from your documents, websites, and FAQs — ideal for customer support, education, legal, and more.',
+    route: '/aichatbot',
+  },
+  {
+    label: 'GTSCANVAS',
+    subtext: 'Auto-generate high-converting marketing banners',
+    description:
+      'Feed in your content, and let AI design eye‑catching visuals for web, social media, and ads — customized to your brand.',
+    route: '/banner',
+  },
+];
 
 const FeaturesSection = () => {
   return (
@@ -205,6 +221,32 @@ const FeaturesSection = () => {
           </p>
         </motion.div>
       </div>
+
+      <div className="mt-20 flex flex-col items-center">
+  <div className="flex justify-center w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl w-full">
+      {PRODUCTS.map((product, index) => (
+        <a
+          key={index}
+          href={product.route}
+          className="bg-gradient-to-r from-[#0b0e14] to-[#111827] border border-[#1f2937] rounded-2xl p-6 shadow-lg flex flex-col items-center text-center gap-2"
+        >
+          <div className="text-xl font-semibold text-white drop-shadow-[0_0_0.2em_#60a5fa]">
+            {product.label}
+          </div>
+          <div className="text-blue-400 text-sm">{product.subtext}</div>
+          <div className="text-gray-400 text-sm mt-2">{product.description}</div>
+          <div className="mt-4">
+  <span className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full border border-blue-500 text-blue-300 text-sm font-medium bg-[#0b0e14]/80 hover:bg-[#1f2937] transition shadow-[0_0_10px_#60a5fa40] hover:shadow-[0_0_15px_#60a5fa70]">
+    Learn more →
+  </span>
+</div>
+
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
     </motion.section>
   );
 };
