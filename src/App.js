@@ -15,7 +15,7 @@ import FinStyleChat from './components/FinStyleChat';
 import FaqPage from './components/FaqPage'; // ✅ Import the new FAQ page
 import DatalysisCaseStudy from './components/DatalysisCaseStudy';
 import HRCaseStudy from './components/HRCaseStudy';
-
+import VideoSection from './components/VideoSection';
 
 function App() {
   const [showChatbot, setShowChatbot] = useState(false);
@@ -36,6 +36,7 @@ function App() {
               {/* <PricingSection /> */}
               <TestimonialSection />
               {/* <FAQSection /> Removed from homepage */}
+              <VideoSection />
               <ContactForm />
             </>
           }
