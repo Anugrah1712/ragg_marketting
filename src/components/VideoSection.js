@@ -60,8 +60,8 @@ const VideoSection = () => {
       className="relative bg-black text-white py-20 px-6 md:px-20"
       ref={sectionRef}
     >
-      <h2 className="text-4xl font-bold mb-10 text-center heading-gradient">
-        Chosen by leading AI companies
+      <h2 className="text-5xl font-bold mb-10 text-center heading-gradient">
+        Trusted by the World's Leading AI Companies
       </h2>
 
       {/* Video Preview */}

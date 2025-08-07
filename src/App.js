@@ -32,11 +32,9 @@ function App() {
               <FinStyleChat />
               <FeaturesSection />
               {/* <Ourstatistics /> */}
-              <UseCasesSection />
-              {/* <PricingSection /> */}
-              <TestimonialSection />
-              {/* <FAQSection /> Removed from homepage */}
               <VideoSection />
+              <UseCasesSection />
+              <TestimonialSection />
               <ContactForm />
             </>
           }
