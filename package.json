@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.23.3",
-    "rag-chatbot-ui-gptbots": "^1.4.7",
+    "rag-chatbot-ui-gptbots": "^1.5.0",
     "react": "^19.1.0",
     "react-datepicker": "^8.4.0",
     "react-dom": "^19.1.0",
