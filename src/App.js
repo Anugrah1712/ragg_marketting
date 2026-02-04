@@ -16,6 +16,7 @@ import FaqPage from './components/FaqPage'; // ✅ Import the new FAQ page
 import DatalysisCaseStudy from './components/DatalysisCaseStudy';
 import HRCaseStudy from './components/HRCaseStudy';
 import VideoSection from './components/VideoSection';
+import GTSCANVAS from "./components/GTSCANVAS";
 
 function App() {
   const [showChatbot, setShowChatbot] = useState(false);
@@ -34,7 +35,7 @@ function App() {
               {/* <Ourstatistics /> */}
               <VideoSection />
               <UseCasesSection />
-              <TestimonialSection />
+              {/* <TestimonialSection /> */}
               <ContactForm />
             </>
           }
@@ -44,6 +45,7 @@ function App() {
         <Route path="/aichatbot" element={<AIChatbot />} />
         <Route path="/case-datalysis" element={<DatalysisCaseStudy />} />
         <Route path="/case-hr" element={<HRCaseStudy />} />
+        <Route path="/banner" element={<GTSCANVAS />} />
       </Routes>
       <Analytics />
       <Chatbot />

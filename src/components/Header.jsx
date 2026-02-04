@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const NAV = [
   { id: 'services', label: 'services' },
   { id: 'process', label: 'process' },
-  { id: 'reviews', label: 'reviews' },
+  // { id: 'reviews', label: 'reviews' },
   { id: 'contact', label: 'contact' },
 ];
 
