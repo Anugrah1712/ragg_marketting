@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GalaxyBackground from "./GalaxyBackground";
+// import GalaxyBackground from "./GalaxyBackground";
 
 
 const headingGradientStyle = {

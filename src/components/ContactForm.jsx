@@ -35,13 +35,13 @@ function ContactForm() {
     form.append("Message", formData.message);
 
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwDogoXgaNwKch-soBs78BSUHYTRmzn2EDwJ0PZVtR_AVAlQCHOvYX99wwkv6yVRuY7/exec",
-        {
-          method: "POST",
-          body: form,
-        }
-      );
+      await fetch(
+      "https://script.google.com/macros/s/AKfycbwDogoXgaNwKch-soBs78BSUHYTRmzn2EDwJ0PZVtR_AVAlQCHOvYX99wwkv6yVRuY7/exec",
+      {
+        method: "POST",
+        body: form,
+      }
+    );
 
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
