@@ -5,7 +5,7 @@ import AIChatbot from "./components/AIChatbot";
 import Home from "./components/Home";
 import FeaturesSection from './components/FeaturesSection';
 import UseCasesSection from './components/UseCasesSection';
-import TestimonialSection from './components/TestimonialSection';
+// import TestimonialSection from './components/TestimonialSection';
 import ContactForm from './components/ContactForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
