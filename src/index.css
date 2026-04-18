@@ -146,12 +146,12 @@ header {
 
 /* ========== Diagonal Blob Animations ========== */
 @keyframes diagonalBlob {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(50vw, 50vh);
-  }
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(15vw, 15vh); }
+}
+@keyframes diagonalBlobReverse {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-15vw, -15vh); }
 }
 @keyframes diagonalBlobReverse {
   0%, 100% {

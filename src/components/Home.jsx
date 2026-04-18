@@ -53,11 +53,13 @@ const Home = () => {
   return (
     <>
       <main>
-        <section className="relative isolate z-50 min-h-screen flex items-center justify-center bg-black overflow-visible">
-          <GalaxyBackground />
-          <div className="absolute -top-[40%] -left-[40%] w-[1200px] h-[1200px] rounded-full bg-[#3b9effaa] blur-[200px] animate-diagonal-move pointer-events-none" />
-          <div className="absolute bottom-[-30%] right-[-30%] w-[1000px] h-[1000px] rounded-full bg-[#3b9eff66] blur-[180px] animate-diagonal-move-reverse pointer-events-none" />
-
+        <section className="relative isolate z-50 min-h-screen flex items-center justify-center bg-black overflow-hidden">
+        <GalaxyBackground />
+        {/* Blob container — strictly clipped to section bounds */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <div className="absolute -top-[20%] -left-[20%] w-[800px] h-[800px] rounded-full bg-[#3b9effaa] blur-[180px] animate-diagonal-move" />
+          <div className="absolute bottom-[-20%] right-[-20%] w-[700px] h-[700px] rounded-full bg-[#3b9eff66] blur-[150px] animate-diagonal-move-reverse" />
+        </div>
           <div className="z-10 max-w-5xl px-4 text-center">
             <img
               src="/logo.png"
