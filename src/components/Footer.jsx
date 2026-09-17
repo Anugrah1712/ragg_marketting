@@ -112,7 +112,7 @@ const Footer = () => {
               contact@genaitechsol.com
             </a>
           </p>
-          <p className="text-gray-300 text-sm mb-2">Phone: +91 827 528 7490</p>
+          <p className="text-gray-300 text-sm mb-2">Phone: +91 7080990105</p>
           <p className="text-gray-400 text-sm">
             #08-37<br />
             356A Anchorvale Lane<br />

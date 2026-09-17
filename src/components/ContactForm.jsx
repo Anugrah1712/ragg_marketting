@@ -61,7 +61,7 @@ function ContactForm() {
             <div>
               <p className="text-blue-400 font-medium mb-1">General Inquiries & Support</p>
               <p>📧 Email: <a href="mailto:support@genaitechsol.com" className="text-white underline">support@genaitechsol.com</a></p>
-              <p>📞 Phone: +91 8275287490</p>
+              <p>📞 Phone: +91 7080990105</p>
               <p>🕘 Hours: All Days, 8:00 AM – 10:00 PM IST</p>
             </div>
 
@@ -123,7 +123,7 @@ function ContactForm() {
               className="form-input"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+91 8275287490"
+              placeholder="+91 7080990105"
               required
             />
           </div>
